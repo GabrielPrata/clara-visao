@@ -1,0 +1,120 @@
+body {
+	background-color: #EEEEEE;
+	font-family: Sans-Serif;
+}
+
+.titulo {
+	font-weight: bold;
+}
+
+.topo {
+	margin-top: 5%;
+}
+
+.center {
+	text-align: center;
+	align-content: center;
+}
+
+.cardLogin {
+	background-color: #4CBCC8 !important;
+	border-radius: 20px !important;
+	max-width: 40%;
+	height: 500px;
+	left: 30%;
+	right: 30%;
+}
+
+.caixa {
+	background-color: white !important;
+	border-radius: 5px !important;
+	border-bottom: none !important;
+	padding-left: 20px !important;
+	max-width: 87%;
+	font-family: Sans-Serif;
+}
+
+.botao {
+	background-color: white !important;
+	border-radius: 5px !important;
+	border: none !important;
+	padding-left: 10px !important;
+	width: 93%;
+	height: 40px;
+	margin-left: -2%;
+	background-color: #505050 !important;
+	color: white !important;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.caixa:hover {
+	box-shadow: none !important;
+	background-color: white !important;
+}
+
+.logo {
+	margin-top: 25px;
+	margin-bottom: 15px;
+}
+
+.recuperar {
+	color: white;
+	font-weight: bold;
+	font-size: 15px;
+}
+
+.formRec1 {
+	max-width: 80%; 
+	margin-left: 10%;
+}
+
+/*Responsividade*/
+@media screen and (max-width: 1192px) {
+	.cardLogin {
+		background-color: #4CBCC8 !important;
+		max-width: 50%;
+		left: 25%;
+		right: 25%;
+	}
+	.botao {
+		width: 93%;
+		margin-left: -1%;
+	}
+}
+
+@media screen and (max-width: 992px) {
+	.cardLogin {
+		background-color: #4CBCC8 !important;
+		max-width: 60%;
+		left: 20%;
+		right: 20%;
+	}
+	.botao {
+		width: 92%;
+		margin-left: 0%;
+	}
+}
+
+@media screen and (max-width: 792px) {
+	.cardLogin {
+		background-color: #4CBCC8 !important;
+		max-width: 85%;
+		left: 7.5%;
+		right: 7.5%;
+	}
+}
+
+/* On screens that are 600px or less, set the background color to olive */
+@media screen and (max-width: 600px) {
+	.cardLogin {
+		background-color: #4CBCC8 !important;
+		max-width: 100%;
+		left: 0%;
+		right: 0%;
+	}
+	.botao {
+		width: 93%;
+		margin-left: -1%;
+	}
+}

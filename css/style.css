@@ -1,0 +1,40 @@
+body {
+	background-color: #EEEEEE;
+	font-family: Sans-Serif;
+	display: flex;
+	flex-direction: column;
+}
+
+.alinhar-logo {
+	margin-top: 0.5% !important;
+}
+
+.color {
+	background-color: #4CBCC8 !important;
+}
+
+.alinhar-texto {
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+.footer-center {
+	text-align: center;
+	flex: 1 0 auto;
+}
+
+.footer-font {
+	font-weight: bold;
+	margin-bottom: -15px;
+}
+
+/*Responsividade*/
+@media screen and (min-width: 993px) {
+	.alinhar-logo {
+		margin-left: 15% !important;
+	}
+	.alinhar-texto {
+		margin-right: 15% !important;
+	}
+}
+

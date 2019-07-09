@@ -1,0 +1,76 @@
+.voltar {
+	color: white !important;
+	text-transform: uppercase;
+	font-weight: bold;
+	background-color: #505050 !important;
+	padding: 10px 40px;
+	border-radius: 10px !important;
+}
+
+.voltar2 {
+	color: white !important;
+	text-transform: uppercase;
+	font-weight: bold;
+	background-color: #505050 !important;
+	padding: 10px 20px;
+	font-size: 12px;
+	border-radius: 10px !important;
+}
+
+.apagar {
+	color: white !important;
+	text-transform: uppercase;
+	font-weight: bold;
+	background-color: #e61919 !important;
+	padding: 10px 20px;
+	font-size: 12px;
+	border-radius: 10px !important;
+}
+
+.pesquisa-title {
+	font-family: Sans-Serif !important;
+	color: white !important;
+	text-transform: uppercase !important;
+	font-weight: bold;
+	background-color: #4CBCC8;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	margin-top: 2.5%;
+}
+
+.pesquisa-th {
+	text-align: center;
+	background-color: white;
+}
+
+.borda {
+	border-right-color: #4CBCC8;
+	border-right-width: 4px;
+	border-right-style: solid;
+}
+
+.pesquisa-td {
+	text-align: center;
+}
+
+.zebrado:nth-child(even) {
+	background: white;
+}
+
+.zebrado:nth-child(even) {
+	background: white;
+}
+
+.zebrado:nth-child(odd) {
+	background-color: #EEEEEE;
+}
+
+.zebrado:hover {
+	background-color: rgba(76, 188, 200, 0.4) !important;
+}
+
+.margem {
+	margin-bottom: 10%;
+}

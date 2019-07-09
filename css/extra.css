@@ -1,0 +1,56 @@
+.titulo-orcamentos {
+	text-transform: uppercase !important;
+	font-weight: bold !important;
+	font-size: 30px !important;
+	margin-bottom: 2.5%;
+	margin-top: 5%;
+}
+
+.pesquisar {
+	text-align: left;
+	margin-bottom: 5%;
+}
+
+.titulo-pesquisar {
+	font-weight: bold !important;
+	font-size: 15px !important;
+	margin-left: 20px;
+}
+
+.caixa {
+	background-color: white !important;
+	border-top-left-radius: 5px !important;
+	border-bottom-left-radius: 5px !important;
+	border-bottom: none !important;
+	padding-left: 20px !important;
+	max-width: 90%;
+	font-family: Sans-Serif;
+}
+
+.caixa2 {
+	background-color: white !important;
+	border-top-right-radius: 5px !important;
+	border-bottom-right-radius: 5px !important;
+	border-bottom: none !important;
+	padding-left: 20px !important;
+	font-family: Sans-Serif;
+	background-color: #4CBCC8 !important;
+	color: white !important;
+	width: 500px !important;
+	margin-left: -0.5%;
+	padding-top: 16px;
+	padding-bottom: 15px;
+	padding-right: 10px;
+}
+
+.lupa {
+	margin-left: -1.5%;
+	vertical-align: middle;
+}
+
+/*Responsividade*/
+@media screen and (max-width: 792px) {
+	.caixa {
+		max-width: 80%;
+	}
+}

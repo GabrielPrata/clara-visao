@@ -36,6 +36,8 @@ if (!isset($_GET['f'])) {
 		include '../includes/inc_cadLab.php'; 
 	} elseif ($_GET['f'] == "tipArmacao") {
 		include '../includes/inc_cadTipoArmacao.php'; 
+	} elseif ($_GET['f'] == "cliente") {
+		include '../includes/inc_cadCliente.php'; 
 	}
 
 	include '../includes/inc_footer.php'; 

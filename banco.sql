@@ -116,3 +116,4 @@ CREATE TABLE SITE_SETTINGS(
 
 
 INSERT INTO USUARIOS(NOME, SOBRENOME, USERNAME, EMAIL, SENHA, ADM, TELEFONE) VALUES ('Admin', 'Admin', 'admin', 'admin@admin.com', '$2y$10$OpTJpSSwmuhcMygfKg4DG.I1z/J6rtUU9sRD53BLOwB8hH.M4vnd2', 0, '12345');
+INSERT INTO SITE_SETTINGS(ATRIBUTO, VALUE1, VALUE2, VALUE3, VALUE4, VALUE5, VALUE6) VALUES ('recuperar_senha', 'seuemail@seuemail.com', 'senha_do_email', 'smtp.gmail.com', '587', '', '');

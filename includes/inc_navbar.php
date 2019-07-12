@@ -28,6 +28,7 @@
       <ul id="dropdown-menu" class="dropdown-content">
         <li><a href="cadastro.php?f=lab">Laboratório</a></li>
         <li><a href="cadastro.php?f=tipArmacao">Tipo Armação</a></li>
+        <li><a href="cadastro.php?f=cliente">Cliente</a></li>
       </ul>
     </div>
   </nav>
@@ -39,6 +40,7 @@
   <li><a href="pesquisar.php">Pesquisar</a></li>
   <li><a href="cadastro.php?f=lab">Cadastrar Laboratório</a></li>
   <li><a href="cadastro.php?f=tipArmacao">Cadastrar Tipo de Armação</a></li>
+  <li><a href="cadastro.php?f=cliente">Cadastrar Cliente</a></li>
   <li><a href="valida.php?f=leave">Sair</a></li>
 </ul>
 

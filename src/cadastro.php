@@ -38,6 +38,8 @@ if (!isset($_GET['f'])) {
 		include '../includes/inc_cadTipoArmacao.php'; 
 	} elseif ($_GET['f'] == "cliente") {
 		include '../includes/inc_cadCliente.php'; 
+	} elseif ($_GET['f'] == "oftalmologista") {
+		include '../includes/inc_cadOftalmologista.php'; 
 	}
 
 	include '../includes/inc_footer.php'; 

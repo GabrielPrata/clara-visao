@@ -2,16 +2,24 @@ body {
 	font-family: Sans-Serif;
 }
 
+td {
+	border:1px solid #EEEEEE !important;
+}
+
 .titulo-form {
 	text-transform: uppercase !important;
 	font-weight: bold !important;
-	font-size: 30px !important;
+	font-size: 20px !important;
 	margin-bottom: 2.5%;
-	margin-top: 5%;
+	margin-top: 3%;
+}
+
+.bordas {
+	min-width: 80% !important;
 }
 
 .titulo-form-span {
-	font-size: 19px !important;
+	font-size: 20px !important;
 }
 
 .titulo-borda {
@@ -27,30 +35,126 @@ body {
 	font-size: 15px !important;
 }
 
-.caixaGrande {
-	background-color: white !important;
-	border-bottom-left-radius: 5px !important;
-	border-top-left-radius: 5px !important;
-	border-bottom: none !important;
-	padding-left: 20px !important;
-	max-width: 57%;
-	display: inline-block !important;
-	margin-left: 10px !important;
-}
-
 .caixa {
 	background-color: white !important;
 	border-radius: 5px !important;
 	border-bottom: none !important;
 	padding-left: 20px !important;
-	max-width: 57%;
+	max-height: 40px !important;
+	max-width: 50%;
 	display: inline-block !important;
 	margin-left: 10px !important;
+	margin-bottom: -20% !important;
+	margin-top: -20% !important;
+}
+
+.exp {
+	max-width: 73% !important;
+}
+
+.max {
+	max-width: 80% !important;
+}
+
+.max2 {
+	max-width: 64.5% !important;
+}
+
+.max3 {
+	max-width: 83.5% !important;
+}
+
+.max4 {
+	max-width: 90.5% !important;
+}
+
+.max5 {
+	max-width: 61% !important;
+}
+
+.obsdioptrias {
+	margin-right: -150px !important;
+}
+
+#dioptrias {
+	max-width: 80%;
+	margin-left: 10%;
+}
+
+#dioptrias td {
+	text-align: center;
+}
+
+.alinhar {
+	margin-left: 17% !important;
+}
+
+.alinhar2 {
+	margin-left: 13% !important;
+}
+
+.alinhar3 {
+	margin-left: 20.5% !important;
+}
+
+.alinhar4 {
+	margin-left: 24% !important;
+}
+
+.alinhar5 {
+	margin-left: 14% !important;
+}
+
+.alinhar6 {
+	margin-left: 9% !important;
+}
+
+.alinhar7 {
+	margin-left: 2% !important;
+}
+
+.alinhar8 {
+	margin-left: 3% !important;
+}
+
+.alinhar9 {
+	margin-left: 1.5% !important;
+}
+
+.alinhar10 {
+	margin-left: 10% !important;
+}
+
+.alinhar11 {
+	margin-left: 12% !important;
+}
+
+.texcaixa {
+	background-color: white !important;
+	border-radius: 5px !important;
+	border-bottom: none !important;
+	padding-left: 20px !important;
+	height: 100px;
+	max-width: 50%;
+	/*display: inline-block !important;*/
+	/*margin-top: 10px !important;*/
+}
+
+.tabelaCampo {
+	background-color: white !important;
+	border-radius: 5px !important;
+	border-bottom: none !important;
+	padding-left: 20px !important;
+	max-height: 40px !important;
+	max-width: 50%;
+	display: inline-block !important;
+	margin-bottom: -20% !important;
+	margin-top: -20% !important;
 }
 
 .descricao {
 	color: black !important;
-	font-size: 15px !important;
+	font-size: 14px !important;
 	font-weight: bold !important;
 	display: block !important;
 }
@@ -59,38 +163,8 @@ body {
 	color: red !important;
 }
 
-.caixaPesquisa {
-	background-color: white !important;
-	border-top-right-radius: 5px !important;
-	border-bottom-right-radius: 5px !important;
-	border-bottom: none !important;
-	background-color: #4CBCC8 !important;
-	color: white !important;
-	width: 500px !important;
-	padding-top: 15px;
-	padding-bottom: 13px;
-	padding-right: 10px;
-	padding-left: 20px !important;
-	margin-left: -2%;
-}
-
-.lupa {
-	margin-left: -1.5%;
-	vertical-align: middle;
-}
-
-.alinhar {
-	margin-left: 16% !important;
-}
-
-.tabelaCampo {
-	background-color: white !important;
-	border-radius: 5px !important;
-	border-bottom: none !important;
-	padding-left: 20px !important;
-	max-width: 50%;
-	display: inline-block !important;
-	margin-left: 10px !important;
+.combo-vendedor {
+	max-width: 32.5% !important;
 }
 
 .finalizar {
@@ -98,38 +172,10 @@ body {
 	border-radius: 5px !important;
 	border: none !important;
 	padding-left: 10px !important;
-	width: 60%;
+	width: 20%;
 	height: 40px;
 	margin-left: -2%;
 	background-color: #00A743 !important;
-	color: white !important;
-	font-weight: bold;
-	text-transform: uppercase;
-}
-
-.limpar {
-	background-color: white !important;
-	border-radius: 5px !important;
-	border: none !important;
-	padding-left: 10px !important;
-	width: 29%;
-	height: 40px;
-	margin-left: -2%;
-	background-color: #9D9D9D !important;
-	color: white !important;
-	font-weight: bold;
-	text-transform: uppercase;
-}
-
-.imprimir {
-	background-color: white !important;
-	border-radius: 5px !important;
-	border: none !important;
-	padding-left: 10px !important;
-	width: 29%;
-	height: 40px;
-	margin-left: -2%;
-	background-color: #4CBCC8 !important;
 	color: white !important;
 	font-weight: bold;
 	text-transform: uppercase;
@@ -146,42 +192,94 @@ body {
 	font-weight: bold;
 	text-transform: uppercase;
 	text-decoration: none !important;
-	padding-top: 12px !important;
-	padding-bottom: 12px !important;
-	padding-left: 22% !important;
-	padding-right: 22% !important;
+	padding-top: 20px !important;
+	padding-bottom: 20px !important;
+	padding-left: 5% !important;
+	padding-right: 5% !important;
+}
+
+.bloco-left {
+	display: inline-block;
+	float: left;
+	min-width: 85% !important;
+}
+
+.bloco-right {
+	display: inline-block;
+	float: relative;
+	min-width: 15% !important;
+}
+
+.vend-cod {
+	max-width: 50px;
+}
+
+.foto-user {
+	border-radius: 10px;
+	margin-left: 20% !important;
+}
+
+.lupa {
+	vertical-align: -13.5px;
+	margin-left: -4px;
+	/*margin-bottom: 1% !important;*/
+	margin-top: -10% !important;
+}
+
+.pesquisar {
+	border-bottom-right-radius: 0px !important;
+	border-top-right-radius: 0px !important;
+}
+
+.reduz-espaco {
+	padding-bottom: -20% !important;
+	/*background-color: red;*/
 }
 
 /*Responsividade*/
-@media screen and (max-width: 1192px) {
-	.caixaGrande {
-		max-width: 75%;
-	}
-}
 
 @media screen and (max-width: 992px) {
-	.caixaGrande {
-		max-width: 70%;
+	.caixa {
+		width: 40% !important;
 	}
-	.observacao {
-		padding-left: 20% !important;
-		padding-right: 20% !important;
+
+	.vend-cod {
+		max-width: 12% !important;
+		padding-left: 0px !important;
 	}
+
+	.exp {
+		max-width: 60% !important;
+	}
+
+	.bloco-left {
+		float: center !important;
+	}
+
 }
 
-@media screen and (max-width: 792px) {
-	.caixaGrande {
-		max-width: 55%;
+/*@media screen and (max-width: 792px) {
+	.exp {
+		background-color: green !important;
 	}
-	.observacao {
-		padding-left: 18% !important;
-		padding-right: 18% !important;
-	}
-}
+	}*/
 
-/* On screens that are 600px or less, set the background color to olive */
-@media screen and (max-width: 600px) {
-	.caixaGrande {
-		max-width: 50%;
+	/* On screens that are 600px or less, set the background color to olive */
+	@media screen and (max-width: 600px) {
+		.caixa {
+			width: 20% !important;
+		}
+
+		.vend-cod {
+			max-width: 12% !important;
+			padding-left: 0px !important;
+		}
+
+		.exp {
+			max-width: 60% !important;
+		}
+
+		.bloco-left {
+			float: center !important;
+		}
 	}
-}

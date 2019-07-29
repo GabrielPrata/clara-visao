@@ -29,7 +29,7 @@ $dados = mysqli_fetch_array($busca);
 	<title>ClaraVisão | Orçamentos de <?php print $dados['CLIENTE']; ?></title>
 	<link rel="stylesheet" href="../css/pesquisas.css?version=124" media="screen,projection">
 	<link rel="stylesheet" href="../css/style.css" media="screen,projection">
-	<link rel="stylesheet" href="../css/extra.css" media="screen,projection">
+	<link rel="stylesheet" href="../css/extra.css?version=125" media="screen,projection">
 	<link rel="stylesheet" href="../css/materialize.min.css" media="screen,projection">
 	<link rel="shortcut icon" href="../favicon.png" />
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">

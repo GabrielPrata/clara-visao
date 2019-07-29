@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="../css/orcamentos.css?version=124" media="screen,projection">
+<link rel="stylesheet" href="../css/orcamentos.css?version=1245" media="screen,projection">
 
 <!-- envia o formulario para a página funcoesCadastro.php-->
 <div class="container center">
@@ -9,17 +9,17 @@
 
 		<label class="descricao">Nome do Laboratorio<span class="obrigatorio"> *</span>
 			<input type="text" name="txtLab" class="caixa" required>
-		</label>
+		</label> <br>
 		<label class="descricao">Endereço
-			<input type="text" name="txtEndereco" class="caixa">
-		</label>
+			<input type="text" name="txtEndereco" class="caixa alinhar10">
+		</label> <br>
 		<label class="descricao">Bairro
-			<input type="text" name="txtBairro" class="caixa">
+			<input type="text" name="txtBairro" class="caixa alinhar11">
 		</label>
 
 		<div class="espacamento"><br><br></div>
 
 		<input type="submit" name="submit" value="Salvar" class="finalizar">
 	</form>
-	<div class="espacamento"><br><br></div>
+	<div class="espacamento"><br><br><br><br></div>
 </div>

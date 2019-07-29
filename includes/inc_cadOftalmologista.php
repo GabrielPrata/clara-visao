@@ -2,13 +2,13 @@
 
 <!-- envia o formulario para a página funcoesCadastro.php-->
 <div class="container center">
-	<form action="funcoesCadastro.php?f=c&form=tipArmacao" method="POST" accept-charset="utf-8">
-		<h4 class="titulo-form">Cadastro de Armação</h4>
+	<form action="funcoesCadastro.php?f=c&form=oftalmologista" method="POST" accept-charset="utf-8">
+		<h4 class="titulo-form">Cadastro de Oftalmologista</h4>
 
 		<div class="espacamento"><br><br></div>
 
-		<label class="descricao">Tipo da Armação<span class="obrigatorio"> *</span>
-			<input type="text" name="txtTipoArm" class="caixa" required>
+		<label class="descricao">Nome Oftalmologista<span class="obrigatorio"> *</span>
+			<input type="text" name="txtNomeOftalmo" class="caixa" required>
 		</label>
 
 		<div class="espacamento"><br><br></div>

@@ -9,7 +9,7 @@ $verif = mysqli_query($conn, "SELECT * FROM CLIENTES");
 $cont = mysqli_num_rows($verif);
 
 if ($cont == 0) {
-	echo "Oops! Nenhum oreçamento foi criado até agora!";
+	echo "Oops! Nenhum orçamento foi criado até agora!";
 } else {
 
 	$mensErro = "";

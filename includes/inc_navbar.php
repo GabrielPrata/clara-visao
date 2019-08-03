@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="../css/materialize.min.css">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<link rel="stylesheet" href="../css/style.css?version=124" media="screen,projection">
+<link rel="stylesheet" href="../css/style.css?version=124345" media="screen,projection">
 
 <div class="navbar-fixed">
   <nav>
@@ -14,6 +14,9 @@
       </a>
 
       <ul id="navbar-items" class="right hide-on-med-and-down alinhar-texto">
+        <?php if ($_SESSION['admin'] == 1) { ?>
+        <li><a href="../admin/index.php" class="fonte painelAdmin">Painel</a></li>
+        <?php } ?>
         <li><a href="painel.php" class="fonte">Início</a></li>
         <li><a href="pesquisar.php" class="fonte">Pesquisar</a></li>
         <li>
@@ -37,6 +40,9 @@
 
 <!-- Menu Mobile -->
 <ul id="mobile-navbar" class="sidenav">
+  <?php if ($_SESSION['admin'] == 1) { ?>
+  <li><a href="../admin/index.php" class="admin">Painel do Admin.</a></li>
+  <?php } ?>
   <li><a href="painel.php">Início</a></li>
   <li><a href="pesquisar.php">Pesquisar</a></li>
   <li><a href="cadastro.php?f=lab">Cadastrar Laboratório</a></li>

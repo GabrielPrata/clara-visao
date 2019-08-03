@@ -37,6 +37,7 @@ if ($_POST) {
 			$_SESSION['autenticado'] = 1;
 			$_SESSION['admin'] = $dados['ADM'];
 			$_SESSION['user'] = $dados['NOME'];
+			$_SESSION['admin_id'] = $dados['ID'];
 			header("Location:painel.php");
 		} else { //retorna para o index alegando senha incorreta
 			echo"<script language='javascript' type='text/javascript'>window.location.href='../index.php?error=4';</script>";

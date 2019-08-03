@@ -3,7 +3,7 @@
 if (!isset($_SESSION)) {
 	SESSION_START();
 }
-include 'conn.php';
+
 // Verifica se o usuário foi autenticado
 if ($_SESSION['autenticado'] == 0) {
 	header("Location:../index.php");
@@ -25,15 +25,21 @@ if ($_SESSION['admin'] == 1) { ?>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>ClaraVisão | Painel</title>
-	<link rel="stylesheet" href="../css/login.css" media="screen,projection">
 	<link rel="stylesheet" href="../css/materialize.min.css" media="screen,projection">
 	<link rel="shortcut icon" href="../favicon.png" />
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
-	<h1>Página do ADM</h1>
+	<?php 
+	include '../includes/inc_navbar.php'; 
+	include '../includes/inc_orcamento.php'; ?>
+	<br> <br>
+	<?php
+	include '../includes/inc_footer.php'; 
+	?>
 
 	<script src="js/materialize.min.js"></script>
+	<script src="js/navbar.js"></script>
 </body>
 </html>
 

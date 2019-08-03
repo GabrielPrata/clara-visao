@@ -32,6 +32,20 @@ body {
 	font-size: 13px !important;
 }
 
+.admin {
+	background-color: #505050;
+	color: white !important;
+}
+
+.admin:hover {
+	background-color: gray !important;
+	color: white !important;
+}
+
+.painelAdmin {
+	background-color: #42A3AD;
+}
+
 /*Responsividade*/
 @media screen and (min-width: 993px) {
 	.alinhar-logo {

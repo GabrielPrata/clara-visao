@@ -5,6 +5,11 @@ if (!isset($_SESSION)) {
 	SESSION_START();
 }
 
+// Verifica se o usuário foi autenticado
+if ($_SESSION['autenticado'] == 0) {
+	header("Location:../index.php");
+}
+
 $verif = mysqli_query($conn, "SELECT * FROM CLIENTES");
 $cont = mysqli_num_rows($verif);
 

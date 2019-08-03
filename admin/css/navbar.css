@@ -1,0 +1,60 @@
+body {
+	font-family: Sans-Serif;
+}
+
+nav {
+	height: 50px;
+	line-height: 50px;
+}
+
+.fundo {
+	background-color: #4CBCC8;
+	height: 190px;
+}
+
+.alinharlg {
+	margin-left: 20% !important;
+	margin-top: 5px;
+}
+
+.alinhartx {
+	margin-right: 20% !important;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.info-client {
+	position: absolute;
+	top: 55px;
+	margin-left: 25px;
+}
+
+.circulo {
+	border-radius: 50px;
+}
+
+.info-txt {
+	position: absolute;
+	top: 40px;
+	margin-left: 120px;
+}
+
+.info-txt h3{
+	font-size: 20px;
+	color: white;
+	font-weight: bold;
+}
+
+.info-txt h4{
+	font-size: 12.5px;
+	position: absolute;
+	color: white;
+	font-weight: bold;
+	top: 40px;
+}
+
+@media screen and (min-width: 900px) {
+	.alinharlg {
+		margin-left: 30% !important;
+	}
+}

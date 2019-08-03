@@ -4,6 +4,11 @@ if (!isset($_SESSION)) {
 	SESSION_START();
 }
 
+// Verifica se o usuário foi autenticado
+if ($_SESSION['autenticado'] == 0) {
+	header("Location:../index.php");
+}
+
 if (!isset($_GET['id']) || !isset($_GET['f'])) {
 	print "<script>history.go(-1)</script>";
 	exit();

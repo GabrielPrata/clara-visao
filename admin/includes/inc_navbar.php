@@ -40,13 +40,13 @@ $cli = mysqli_num_rows($cli);
   </div> </li>
 
   <li><a href="index.php"><i class="material-icons lupa">pie_chart</i>Painel de Controle</a></li>
-  <li><a href="funcionarios.php"><i class="material-icons lupa">account_circle</i>Funcionários</a></li>
+  <li><a href="funcionarios.php?f=ver&list=all"><i class="material-icons lupa">account_circle</i>Funcionários</a></li>
 
-  <li><a href="clientes.php"><i class="material-icons lupa">person</i>Clientes
+  <li><a href="clientes.php?f=ver&list=all"><i class="material-icons lupa">person</i>Clientes
     <span class="new badge green tooltipped" data-badge-caption="" data-position="right" data-tooltip="Total de Clientes"><?php print $cli; ?></span>
   </a></li>
 
-  <li><a href="orcamentos.php"><i class="material-icons lupa">payment</i>Orçamentos 
+  <li><a href="orcamentos.php?f=ver&list=all"><i class="material-icons lupa">payment</i>Orçamentos 
     <span class="new badge blue tooltipped" data-badge-caption="" data-position="right" data-tooltip="Total de Orçamentos"><?php print $orc; ?></span>
   </a></li>
   
@@ -54,7 +54,7 @@ $cli = mysqli_num_rows($cli);
     Cadastros 
     <i class="material-icons right">arrow_drop_down</i>
   </a></li>
-  <li><a href="users.php"><i class="material-icons lupa">account_box</i>Usuários</a></li>
+  <li><a href="users.php?f=ver&list=all"><i class="material-icons lupa">account_box</i>Usuários</a></li>
   <li><a href="sistema.php"><i class="material-icons lupa">settings</i>Definições do Sistema</a></li>
 </ul>
 

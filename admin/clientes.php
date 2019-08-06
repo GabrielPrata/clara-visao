@@ -39,8 +39,10 @@ $admin = mysqli_fetch_array($admin);
 	<?php include 'includes/inc_navbar.php'; ?>
 
 	<div class="corpo">
-		<label class="titulo">Clientes <span>Definições</span></label>
+		<label class="titulo">Clientes <span>Todos</span></label>
 	</div>
+
+	<?php include 'includes/inc_clientes.php'; ?>
 
 	<script src="../js/materialize.min.js"></script>
 	<script src="../js/navbar.js"></script>

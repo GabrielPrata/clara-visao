@@ -1,16 +1,20 @@
-<link rel="stylesheet" href="css/style.css?version=5151" media="screen,projection">
+<link rel="stylesheet" href="css/style.css?version=4545" media="screen,projection">
 
 <div class="corpo">
 
 	<nav class="navegacao">
 		<div class="nav-wrapper">
 			<ul class="right">
+				<li>
+					<input class="caixa cp" type="text" name="txtNomeCliente">
+					<img class="caixaPesquisa" src="../img/lupa.png" width="30" height="auto" alt="Pesquisar" onclick="">
+				</li>
 				<li><a href="sass.html" class="waves-effect waves-light btn-small green">Novo</a></li>
 			</ul>
 		</div>
 	</nav>
 
-	<table>
+	<table class="table-pesquisa">
 		<thead>
 			<tr class="pesquisa-title">
 				<th class="pesquisa-th">Vendedor</th>

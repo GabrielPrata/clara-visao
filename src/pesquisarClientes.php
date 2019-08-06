@@ -19,7 +19,7 @@ if ($cont == 0) {
 
 	$mensErro = "";
 
-	$query = "SELECT * FROM CLIENTES ORDER BY ID LIMIT 25";
+	$query = "SELECT * FROM CLIENTES ORDER BY CLIENTE ASC LIMIT 25";
 
 	if (isset($_POST['consulta'])) {
 		$q = $conn->real_escape_string($_POST['consulta']);

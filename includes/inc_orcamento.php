@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="../css/orcamentos.css?version=1278" media="screen,projection">
+<link rel="stylesheet" href="../css/orcamentos.css" media="screen,projection">
 
 <!-- envia o formulario para a página orcamento.php, passando o valor c por get. c = cadastro de novo orçamento -->
 <div class="container center bordas">

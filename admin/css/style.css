@@ -29,6 +29,15 @@
 		margin-top: -42.5px !important;
 		margin-left: -8%;
 	}
+
+	.table-pesquisa {
+		margin-left: -0.02% !important;
+	}
+
+	.cp {
+		max-width: 150px !important;
+		margin-left: -170px !important;
+	}
 }
 
 .informacoesCX {
@@ -133,4 +142,28 @@
 
 .zebrado:hover {
 	background-color: rgba(76, 188, 200, 0.4) !important;
+}
+
+.caixa {
+	background-color: white !important;
+	border-radius: 5px !important;
+	border-bottom: none !important;
+	padding-left: 20px !important;
+	max-width: 50%;
+	font-family: Sans-Serif;
+	max-height: 35px;
+}
+
+.caixaPesquisa {
+	margin-top: 8.5px;
+	background-color: none !important;
+}
+
+.cp {
+	position: absolute;
+	margin-top: 9px !important;
+	max-width: 100px;
+	margin-left: -350px;
+	border-bottom-right-radius: 0px !important;
+	border-top-right-radius: 0px !important;
 }

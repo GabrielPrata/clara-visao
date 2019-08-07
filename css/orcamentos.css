@@ -129,6 +129,11 @@ td {
 	margin-left: 12% !important;
 }
 
+.alinhar12 {
+	margin-left: 11% !important;
+}
+
+
 .texcaixa {
 	background-color: white !important;
 	border-radius: 5px !important;
@@ -281,5 +286,13 @@ td {
 
 		.bloco-left {
 			float: center !important;
+		}
+
+		.alinhar12 {
+			margin-left: 24% !important;
+		}
+
+		.alinhar10 {
+			margin-left: 22% !important;
 		}
 	}

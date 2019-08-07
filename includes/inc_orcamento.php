@@ -59,7 +59,21 @@
 						<td>
 							<label class="descricao">Vendedor
 								<input class="caixa vend-cod alinhar5" type="text" name="txtVendedorCod" size="3" placeholder="Cod.">
-								<input class="caixa combo-vendedor" type="text" name="txtVendedor" size="8">
+								<!-- <input class="caixa combo-vendedor" type="text" name="txtVendedor" size="8"> -->
+								<select name="txtVendedor" class="caixa combo-vendedor" required>
+									<?php 
+									$query = mysqli_query($conn, "SELECT * FROM FUNCIONARIOS");
+									$count = mysqli_num_rows($query);
+
+									if ($count == 0) {
+										?> <option value="" disabled="" selected="">Cadastre um Tipo de Armação</option> <?php
+									} else {
+										while ($array = mysqli_fetch_array($query)) {
+											?> <option value="<?php print $array['ID']; ?>"><?php print $array['NOME']; ?></option> <?php
+										}
+									}
+									?>
+								</select>
 							</label>
 						</td>
 					</tr>
@@ -237,7 +251,21 @@
 					</td>
 					<td>
 						<label class="descricao">Tipo de Armação
-							<input class="caixa max5" type="text" name="txtArmacaoTipo">
+							<!-- <input class="caixa max5" type="text" name="txtArmacaoTipo"> -->
+							<select name="txtArmacaoTipo" class="caixa max5" required>
+								<?php 
+								$query = mysqli_query($conn, "SELECT * FROM ARMACAO");
+								$count = mysqli_num_rows($query);
+
+								if ($count == 0) {
+									?> <option value="" disabled="" selected="">Cadastre um Tipo de Armação</option> <?php
+								} else {
+									while ($array = mysqli_fetch_array($query)) {
+										?> <option value="<?php print $array['ID']; ?>"><?php print $array['ARMACAO']; ?></option> <?php
+									}
+								}
+								?>
+							</select>
 						</label>
 					</td>
 				</tr>

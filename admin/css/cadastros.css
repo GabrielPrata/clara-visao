@@ -1,0 +1,32 @@
+.finalizar {
+	background-color: white !important;
+	border-radius: 5px !important;
+	border: none !important;
+	padding-left: 10px !important;
+	width: 20%;
+	height: 40px;
+	margin-left: -2%;
+	background-color: #00A743 !important;
+	color: white !important;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.descricao {
+	color: black !important;
+	font-size: 14px !important;
+	font-weight: bold !important;
+	display: block !important;
+}
+
+.obrigatorio {
+	color: red !important;
+}
+
+.alinhar {
+	margin-left: 95px !important;
+}
+
+.alinhar2 {
+	margin-left: 87px !important;
+}

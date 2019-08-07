@@ -26,7 +26,11 @@ if (!isset($_GET['f'])) {
 		echo "Laboratórios";
 	} elseif ($_GET['f'] == "tipArmacao") {
 		echo "Tipos de Armação";
-	}
+	} elseif ($_GET['f'] == "cliente") {
+		echo "Cliente";
+	} elseif ($_GET['f'] == "oftalmologista") {
+		echo "Oftalmologista";
+	} 
 	?></title>
 	<link rel="stylesheet" href="../css/materialize.min.css" media="screen,projection">
 	<link rel="shortcut icon" href="../favicon.png" />

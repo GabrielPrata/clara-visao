@@ -62,6 +62,7 @@ $cli = mysqli_num_rows($cli);
   <li><a href="cadastro.php?f=lab">Laboratório</a></li>
   <li><a href="cadastro.php?f=tipArmacao">Armação</a></li>
   <li><a href="cadastro.php?f=oftalmologista">Oftalmologista</a></li>
+  <li><a href="cadastro.php?f=cliente">Clientes</a></li>
 </ul>
 
 <script src="../js/materialize.min.js"></script>

@@ -50,20 +50,21 @@ if ($_GET['f'] == "lab") {
 
 	<div class="corpo">
 		<label class="titulo">Cadastros <span>Cadastrar <?php print $f; ?></span></label>
+
+		<?php
+		if ($_GET['f'] == "lab") {
+			include 'includes/inc_cadLab.php'; 
+		} elseif ($_GET['f'] == "tipArmacao") {
+			include 'includes/inc_cadTipoArmacao.php'; 
+		} elseif ($_GET['f'] == "cliente") {
+			include 'includes/inc_cadCliente.php'; 
+		} elseif ($_GET['f'] == "oftalmologista") {
+			include 'includes/inc_cadOftalmologista.php'; 
+		}
+		?>
+
 	</div>
-
-	<?php
-	if ($_GET['f'] == "lab") {
-		include 'includes/inc_cadLab.php'; 
-	} elseif ($_GET['f'] == "tipArmacao") {
-		include 'includes/inc_cadTipoArmacao.php'; 
-	} elseif ($_GET['f'] == "cliente") {
-		include 'includes/inc_cadCliente.php'; 
-	} elseif ($_GET['f'] == "oftalmologista") {
-		include 'includes/inc_cadOftalmologista.php'; 
-	}
-	?>
-
+	
 	<script src="../js/materialize.min.js"></script>
 	<script src="../js/navbar.js"></script>
 </body>

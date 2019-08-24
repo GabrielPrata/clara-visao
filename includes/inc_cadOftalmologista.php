@@ -7,13 +7,24 @@
 
 		<div class="espacamento"><br><br></div>
 
-		<label class="descricao">Nome Oftalmologista<span class="obrigatorio"> *</span>
-			<input type="text" name="txtNomeOftalmo" class="caixa" required>
-		</label> 
-		<br>
-		<label class="descricao">Telefone
-			<input type="text" name="txtTelefone" class="caixa alinhar12">
-		</label>
+		<div class="row">
+			<div class="col s12 m12">
+				<div class="col s3 m2">
+					<label class="descricao">Nome Ofta.<span class="obrigatorio">*</span></label>
+				</div>
+				<div class="col s9 m10">
+					<input type="text" name="txtNomeOftalmo" class="caixa" required>
+				</div>
+			</div> 
+			<div class="col s12 m12" style="margin-top: 20px !important;">
+				<div class="col s3 m2">
+					<label class="descricao">Telefone</label>
+				</div>
+				<div class="col s9 m10">
+					<input type="text" name="txtTelefone" class="caixa">
+				</div>
+			</div>
+		</div>
 
 		<div class="espacamento"><br><br></div>
 

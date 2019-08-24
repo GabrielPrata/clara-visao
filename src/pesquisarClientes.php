@@ -14,7 +14,11 @@ $verif = mysqli_query($conn, "SELECT * FROM CLIENTES");
 $cont = mysqli_num_rows($verif);
 
 if ($cont == 0) {
-	echo "Oops! Nenhum orçamento foi criado até agora!";
+	?>
+	<div class="container center" style="height: 200px;">
+		<p>Oops! Nenhum cliente cadastrado no sistema.</p>
+	</div>
+	<?php
 } else {
 
 	$mensErro = "";

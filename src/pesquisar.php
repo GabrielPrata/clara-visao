@@ -31,10 +31,10 @@ if ($_SESSION['autenticado'] == 0) {
 	<div class="container center">
 		<h4 class="titulo-orcamentos">Pesquisar Orçamentos</h4>
 
-		<div class="pesquisar">
+		<div class="pesquisar center">
 			<h5 class="titulo-pesquisar">Nome do Cliente</h5>
 			<label>
-				<input class="caixa" type="text" name="pesq_buscar" id="pesq_buscar" placeholder="Nome do Cliente">
+				<input class="caixa" type="text" name="pesq_buscar" id="pesq_buscar" style="max-width: 75% !important;">
 				<a href="#" class="caixa2"><i class="material-icons lupa">search</i></a>
 			</label>
 			<div id="tabela"></div>

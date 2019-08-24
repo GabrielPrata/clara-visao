@@ -3,7 +3,7 @@ body {
 }
 
 td {
-	border:1px solid #EEEEEE !important;
+	border: 0.1px solid #EEEEEE !important;
 }
 
 .titulo-form {
@@ -41,35 +41,15 @@ td {
 	border-bottom: none !important;
 	padding-left: 20px !important;
 	max-height: 40px !important;
-	max-width: 50%;
+	max-width: 90%;
 	display: inline-block !important;
-	margin-left: 10px !important;
+	margin-left: 10px;
 	margin-bottom: -20% !important;
 	margin-top: -20% !important;
 }
 
 .exp {
 	max-width: 73% !important;
-}
-
-.max {
-	max-width: 80% !important;
-}
-
-.max2 {
-	max-width: 64.5% !important;
-}
-
-.max3 {
-	max-width: 83.5% !important;
-}
-
-.max4 {
-	max-width: 90.5% !important;
-}
-
-.max5 {
-	max-width: 61% !important;
 }
 
 .obsdioptrias {
@@ -85,54 +65,37 @@ td {
 	text-align: center;
 }
 
-.alinhar {
-	margin-left: 17% !important;
+.single {
+	margin-top: 15px !important;
 }
 
-.alinhar2 {
-	margin-left: 13% !important;
+.single2 {
+	margin-top: 17px !important;
 }
 
-.alinhar3 {
-	margin-left: 20.5% !important;
+.double {
+	margin-top: -5px !important;
+	margin-bottom: 22.5px !important;
 }
 
-.alinhar4 {
-	margin-left: 24% !important;
+.double2 {
+	margin-top: 10px !important;
+	margin-bottom: 22.5px !important;
 }
 
-.alinhar5 {
-	margin-left: 14% !important;
+.double3 {
+	margin-top: -20px !important;
+	margin-bottom: 22.5px !important;
 }
 
-.alinhar6 {
-	margin-left: 9% !important;
+.triple {
+	margin-top: 15px !important;
+	margin-bottom: 22.5px !important;
 }
 
-.alinhar7 {
-	margin-left: 2% !important;
+.name {
+	margin-left: 11px !important;
 }
-
-.alinhar8 {
-	margin-left: 3% !important;
-}
-
-.alinhar9 {
-	margin-left: 1.5% !important;
-}
-
-.alinhar10 {
-	margin-left: 10% !important;
-}
-
-.alinhar11 {
-	margin-left: 12% !important;
-}
-
-.alinhar12 {
-	margin-left: 11% !important;
-}
-
 
 .texcaixa {
 	background-color: white !important;
@@ -140,9 +103,8 @@ td {
 	border-bottom: none !important;
 	padding-left: 20px !important;
 	height: 100px;
-	max-width: 50%;
-	/*display: inline-block !important;*/
-	/*margin-top: 10px !important;*/
+	max-width: 85%;
+	margin-top: -29px !important;
 }
 
 .tabelaCampo {
@@ -162,14 +124,15 @@ td {
 	font-size: 14px !important;
 	font-weight: bold !important;
 	display: block !important;
+	text-align: left;
 }
 
 .obrigatorio {
 	color: red !important;
 }
 
-.combo-vendedor {
-	max-width: 32.5% !important;
+.oftalmo {
+	margin-top: 20px !important;
 }
 
 .finalizar {
@@ -215,10 +178,6 @@ td {
 	min-width: 15% !important;
 }
 
-.vend-cod {
-	max-width: 50px;
-}
-
 .foto-user {
 	border-radius: 10px;
 	margin-left: 20% !important;
@@ -241,11 +200,19 @@ td {
 	/*background-color: red;*/
 }
 
+.tabela-reduzir-espaco {
+	margin-top: -50px !important;
+}
+
+.combo-vendedor {
+	margin-left: -30px;
+}
+
 /*Responsividade*/
 
 @media screen and (max-width: 992px) {
 	.caixa {
-		width: 40% !important;
+		width: 50% !important;
 	}
 
 	.vend-cod {
@@ -254,7 +221,7 @@ td {
 	}
 
 	.exp {
-		max-width: 60% !important;
+		max-width: 80% !important;
 	}
 
 	.bloco-left {
@@ -263,36 +230,32 @@ td {
 
 }
 
-/*@media screen and (max-width: 792px) {
+/* On screens that are 600px or less, set the background color to olive */
+@media screen and (max-width: 600px) {
+	.caixa {
+		width: 70% !important;
+		/*margin-top: 10px !important;*/
+	}
+
+	.vend-cod {
+		max-width: 12% !important;
+		padding-left: 0px !important;
+	}
+
 	.exp {
-		background-color: green !important;
+		max-width: 40% !important;
 	}
-	}*/
 
-	/* On screens that are 600px or less, set the background color to olive */
-	@media screen and (max-width: 600px) {
-		.caixa {
-			width: 20% !important;
-		}
-
-		.vend-cod {
-			max-width: 12% !important;
-			padding-left: 0px !important;
-		}
-
-		.exp {
-			max-width: 60% !important;
-		}
-
-		.bloco-left {
-			float: center !important;
-		}
-
-		.alinhar12 {
-			margin-left: 24% !important;
-		}
-
-		.alinhar10 {
-			margin-left: 22% !important;
-		}
+	.bloco-left {
+		float: center !important;
 	}
+
+	.combo-vendedor {
+		margin-left: -20px !important;
+	}
+
+	.divide {
+		margin-top: 25px !important;
+	}
+
+}

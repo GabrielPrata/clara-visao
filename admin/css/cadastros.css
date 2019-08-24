@@ -30,3 +30,8 @@
 .alinhar2 {
 	margin-left: 87px !important;
 }
+
+.pesquisar {
+	border-bottom-right-radius: 0px !important;
+	border-top-right-radius: 0px !important;
+}

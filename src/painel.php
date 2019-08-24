@@ -39,6 +39,7 @@ if ($_SESSION['admin'] == 1) { ?>
 	?>
 
 	<script src="js/materialize.min.js"></script>
+	<script src="js/jquery.min.js"></script>
 	<script src="js/navbar.js"></script>
 </body>
 </html>

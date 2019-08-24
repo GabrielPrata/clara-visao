@@ -17,7 +17,11 @@
         <?php if ($_SESSION['admin'] == 1) { ?>
         <li><a href="../admin/index.php" class="fonte painelAdmin">Painel</a></li>
         <?php } ?>
+        <?php 
+        $url = substr($_SERVER["REQUEST_URI"], strpos($_SERVER["REQUEST_URI"], 'src/painel.php'));
+        if ($url != "src/painel.php") { ?>
         <li><a href="painel.php" class="fonte">Início</a></li>
+        <?php } ?>
         <li><a href="pesquisar.php" class="fonte">Pesquisar</a></li>
         <li>
           <a class="dropdown-trigger fonte" data-target="dropdown-menu" href="">
@@ -43,7 +47,11 @@
   <?php if ($_SESSION['admin'] == 1) { ?>
   <li><a href="../admin/index.php" class="admin">Painel do Admin.</a></li>
   <?php } ?>
+  <?php 
+  $url = substr($_SERVER["REQUEST_URI"], strpos($_SERVER["REQUEST_URI"], 'src/painel.php'));
+  if ($url != "src/painel.php") { ?>
   <li><a href="painel.php">Início</a></li>
+  <?php } ?>
   <li><a href="pesquisar.php">Pesquisar</a></li>
   <li><a href="cadastro.php?f=lab">Cadastrar Laboratório</a></li>
   <li><a href="cadastro.php?f=tipArmacao">Cadastrar Tipo de Armação</a></li>

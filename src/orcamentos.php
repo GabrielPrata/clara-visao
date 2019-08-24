@@ -27,7 +27,7 @@ $dados = mysqli_fetch_array($busca);
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>ClaraVisão | Orçamentos de <?php print $dados['CLIENTE']; ?></title>
-	<link rel="stylesheet" href="../css/pesquisas.css?version=124" media="screen,projection">
+	<link rel="stylesheet" href="../css/pesquisas.css?version=78" media="screen,projection">
 	<link rel="stylesheet" href="../css/style.css" media="screen,projection">
 	<link rel="stylesheet" href="../css/extra.css?version=125" media="screen,projection">
 	<link rel="stylesheet" href="../css/materialize.min.css" media="screen,projection">
@@ -45,7 +45,14 @@ $dados = mysqli_fetch_array($busca);
 		<h4 class="titulo-orcamentos">Orçamentos de <?php print $dados['CLIENTE']; ?></h4>
 
 		<?php if ($tabelaNum == 0) {
-			echo "<br> <br> <p> Esse cliente não possui orçamentos cadastrados. </p> <br> <a href='pesquisar.php' class='voltar' >Voltar</a> <br> <br> <br> <br>";
+			?>
+
+			<div class="container center" style="height: 300px; margin-top: 10%;">
+				<p>O cliente <span style="color: #4CBCC8; font-weight: bold;"><?php print $dados['CLIENTE']; ?></span> não possui orçamentos cadastrados.</p> <br>
+				<a href='pesquisar.php' class='voltar2'>Voltar</a>
+			</div>
+
+			<?php
 		} else {?>
 		<table class="margem">
 			<caption class='pesquisa-title'>Resultados Encontrados</caption>
@@ -70,6 +77,9 @@ $dados = mysqli_fetch_array($busca);
 				} ?>
 			</tbody>
 		</table>
+		<div class="margem">
+			<a href='pesquisar.php' class='voltar2'>Voltar</a>
+		</div>
 		<?php } ?>
 	</div>
 	<!-- Incluir rodapé -->

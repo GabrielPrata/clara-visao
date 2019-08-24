@@ -7,9 +7,14 @@
 
 		<div class="espacamento"><br><br></div>
 
-		<label class="descricao">Tipo da Armação<span class="obrigatorio"> *</span>
-			<input type="text" name="txtTipoArm" class="caixa" required>
-		</label>
+		<div class="row">
+			<div class="col s4 m2">
+				<label class="descricao">Tipo da Armação<span class="obrigatorio">*</span></label>
+			</div>
+			<div class="col s8 m10">
+				<input type="text" name="txtTipoArm" class="caixa" required>
+			</div>
+		</div>
 
 		<div class="espacamento"><br><br></div>
 

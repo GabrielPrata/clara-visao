@@ -1,69 +1,158 @@
-<?php
-$orc = mysqli_query($conn, "SELECT ID FROM ORCAMENTOS");
-$orc = mysqli_num_rows($orc);
+<style type="text/css" media="screen">
 
-$cli = mysqli_query($conn, "SELECT ID FROM CLIENTES");
-$cli = mysqli_num_rows($cli);
-?>
+body {
+  overflow-x: hidden;
+}
 
-<link rel="stylesheet" href="../css/materialize.min.css">
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<link rel="stylesheet" href="../css/style.css" media="screen,projection">
-<link rel="stylesheet" href="css/navbar.css?version=1515" media="screen,projection">
+@media screen and (min-width: 993px) {
+  .logo {
+    margin-left: 20% !important;
+  }
+}
 
-<div class="navbar navbar-fixed">
-  <nav>
-    <div class="nav-wrapper color darken-2">
-      <a href="#" data-target="sidenav-1" class="left sidenav-trigger hide-on-medium-and-up"><i class="material-icons">menu</i></a>
-      <!-- Logo -->
-      <a href="index.php" class="brand-logo left alinharlg"><img src="../img/logo.png" width="40" height="auto" alt="ClaraVisão"></a>
+</style>
 
-      <ul id="navbar-items" class="right alinhartx">
-        <li><a href="../src/painel.php" class="fonte painelAdmin">Ir para Vendas</a></li>
-        <li><a href="../src/valida.php?f=leave" class="fonte">Sair</a></li>
+<header id="header" class="page-topbar">
+  <!-- start header nav-->
+  <div class="navbar-fixed">
+    <nav class="navbar-color" style="background-color: #4CBCC8 !important;">
+      <div class="nav-wrapper">
+        <ul class="left"> 
+          <li>
+            <a href="index.php" class="brand-logo logo">
+              <img src="../img/logo.png" alt="ClaraVisão" style="max-height: 50px !important; max-width: 50px !important; margin-top: -12.5px;">
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <!-- end header nav-->
+</header>
+
+<!-- START MAIN -->
+<div id="main">
+  <!-- START WRAPPER -->
+  <div class="wrapper">
+
+    <!-- START LEFT SIDEBAR NAV-->
+    <aside id="left-sidebar-nav">
+      <ul id="slide-out" class="side-nav fixed leftside-navigation">
+
+        <li class="user-details cyan darken-2">
+          <div class="row">
+            <div class="col col s4 m4 l4">
+              <img src="images/usuarios/<?php print $admin['IMAGEM'] ?>" alt="" class="circle responsive-img valign profile-image">
+            </div>
+            <div class="col col s8 m8 l8">
+
+              <ul id="profile-dropdown" class="dropdown-content">
+                <li><a href="../src/valida.php?f=leave"><i class="mdi-hardware-keyboard-tab"></i> Sair</a>
+                </li>
+              </ul>
+
+              <a class="btn-flat dropdown-button waves-effect waves-light white-text profile-btn" href="#" data-activates="profile-dropdown"><?php print $admin['NOME']; ?></a>
+              <p class="user-roal">Administrador</p>
+
+            </div>
+          </div>
+        </li>
+
+        <li class="bold"><a href="../src/painel.php" class="waves-effect waves-cyan"><i class="mdi-action-dashboard"></i> Página de Orçamentos</a>
+        </li>
+
+        <li class="bold"><a href="index.php" class="waves-effect waves-cyan"><i class="mdi-content-content-paste"></i> Início</a>
+        </li>
+
+        <li class="no-padding">
+          <ul class="collapsible collapsible-accordion">
+            <li class="bold"><a class="collapsible-header waves-effect waves-cyan active"><i class="mdi-action-view-carousel"></i> Relatórios</a>
+              <div class="collapsible-body">
+                <ul>
+                  <li>
+                    <a href="#">Orçamentos</a>
+                  </li>
+                  <li>
+                    <a href="#">Funcionarios</a>
+                  </li>
+                  <li>
+                    <a href="#">Clientes</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </li>
+
+        <li class="no-padding">
+          <ul class="collapsible collapsible-accordion">
+            <li class="bold"><a class="collapsible-header waves-effect waves-cyan"><i class="mdi-social-group-add"></i> Cadastros </a>
+              <div class="collapsible-body">
+                <ul>
+                  <li>
+                    <a href="#">Laboratório</a>
+                  </li>
+                  <li>
+                    <a href="#">Armação</a>
+                  </li>
+                  <li>
+                    <a href="#">Oftalmologista</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </li>
+
+        <li class="no-padding">
+          <ul class="collapsible collapsible-accordion">
+            <li class="bold"><a class="collapsible-header waves-effect waves-cyan"><i class="mdi-action-credit-card"></i> Orçamentos </a>
+              <div class="collapsible-body">
+                <ul>
+                  <li>
+                    <a href="#">Listar Orçamentos</a>
+                  </li>
+                  <li>
+                    <a href="#">Cadastrar Orçamento</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </li>
+
+        <li class="no-padding">
+          <ul class="collapsible collapsible-accordion">
+            <li class="bold"><a class="collapsible-header waves-effect waves-cyan"><i class="mdi-action-account-circle"></i> Usuários do Sistema</a>
+              <div class="collapsible-body">
+                <ul>
+                  <li>
+                    <a href="#">Exibir usuários</a>
+                  </li>
+                  <li>
+                    <a href="#">Cadastrar um usuário</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </li>
+
+        <li class="li-hover"><div class="divider"></div></li>
+
+        <li class="bold">
+          <a href="#" class="waves-effect waves-cyan"><i class="mdi-action-settings"></i> Configurações</a>
+        </li>
+
+        <li class="bold">
+          <a href="../src/valida.php?f=leave" class="waves-effect waves-cyan"><i class="mdi-hardware-keyboard-tab"></i> Sair</a>
+        </li>
+
       </ul>
-    </div>
-  </nav>
+      <a href="#" data-activates="slide-out" class="sidebar-collapse btn-floating btn-small waves-effect waves-light hide-on-large-only cyan"><i class="mdi-navigation-menu"></i></a>
+    </aside>
+
+  </div>
+  <!-- END WRAPPER -->
+
 </div>
-
-<ul id="sidenav-1" class="sidenav sidenav-fixed">
-  <li> <div class="client_view">
-    <div class="fundo">
-    </div> 
-    <div class="info-client">
-      <img src="../img/<?php print $admin['IMAGEM'];?>" class="circulo" width="75" height="auto">
-    </div>
-    <div class="info-txt">
-      <h3><?php print $admin['NOME'];?></h3>
-      <h4><?php print $admin['EMAIL'];?></h4>
-    </div>
-  </div> </li>
-
-  <li><a href="index.php"><i class="material-icons lupa">pie_chart</i>Painel de Controle</a></li>
-  <li><a href="funcionarios.php?f=ver&list=all"><i class="material-icons lupa">account_circle</i>Funcionários</a></li>
-
-  <li><a href="clientes.php?f=ver&list=all"><i class="material-icons lupa">person</i>Clientes
-    <span class="new badge green tooltipped" data-badge-caption="" data-position="right" data-tooltip="Total de Clientes"><?php print $cli; ?></span>
-  </a></li>
-
-  <li><a href="orcamentos.php?f=ver&list=all"><i class="material-icons lupa">payment</i>Orçamentos 
-    <span class="new badge blue tooltipped" data-badge-caption="" data-position="right" data-tooltip="Total de Orçamentos"><?php print $orc; ?></span>
-  </a></li>
-  
-  <li><a class="dropdown-trigger fonte" data-target="dropdown-menu" href=""> <i class="material-icons lupa">add_circle</i>
-    Cadastros 
-    <i class="material-icons right">arrow_drop_down</i>
-  </a></li>
-  <li><a href="users.php?f=ver&list=all"><i class="material-icons lupa">account_box</i>Usuários</a></li>
-  <li><a href="sistema.php"><i class="material-icons lupa">settings</i>Definições do Sistema</a></li>
-</ul>
-
-<ul id="dropdown-menu" class="dropdown-content">
-  <li><a href="cadastro.php?f=lab">Laboratório</a></li>
-  <li><a href="cadastro.php?f=tipArmacao">Armação</a></li>
-  <li><a href="cadastro.php?f=oftalmologista">Oftalmologista</a></li>
-  <li><a href="cadastro.php?f=cliente">Clientes</a></li>
-</ul>
-
-<script src="../js/materialize.min.js"></script>
-<script src="../js/nav.js"></script>

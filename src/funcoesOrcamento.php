@@ -22,11 +22,22 @@ if ($_GET['f'] == "del") {
 	}
 
 	include 'conn.php';
-	if (mysqli_query($conn, "DELETE FROM ORCAMENTOS WHERE ID='$id'")) {
-		print "<script>alert('Orçamento apagado com sucesso!'); history.go(-1)</script>";
+	$query = mysqli_query($conn, "SELECT * FROM ORCAMENTOS WHERE ID='$id'");
+	$array = mysqli_fetch_array($query);
+
+	if (!mysqli_query($conn, "DELETE FROM ORCAMENTOS WHERE ID='$id'")) {
+		print "<script>alert('Ocorreu um erro ao apagar o orçamento!'); history.go(-1)</script>";
+		exit();
 	}
 
+	if (!mysqli_query($conn, "DELETE FROM MEDIDAS WHERE ID='" . $array['MEDIDAS'] . "'")) {
+		print "<script>alert('Ocorreu um erro ao apagar as medidas!'); history.go(-1)</script>";
+		exit();
+	}
 
+	mysqli_close($conn);
+	mysqli_free_result($array);
+	print "<script>alert('Orçamento apagado com sucesso!'); history.go(-1)</script>";
 
 } else {
 	print "<script>history.go(-1)</script>";

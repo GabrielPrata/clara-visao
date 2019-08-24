@@ -448,6 +448,7 @@
 
 <script type="text/javascript">
 	// Função para atualizar o campo Código do Vendedor, completando ele automaticamente quando é trocado a campo da combobox, se não for trocado o campo ele seleciona o primeiro funcionario da lista
+
 	$(function(){
 		var valor = $('#txtVendedor').val();
 		$('#txtVendedorCod').val(valor)

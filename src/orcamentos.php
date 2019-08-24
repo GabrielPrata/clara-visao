@@ -69,8 +69,10 @@ $dados = mysqli_fetch_array($busca);
 				while ($tabelaDados = mysqli_fetch_array($tabela)) {
 					echo "<tr class='zebrado'> ";
 					$data = explode("-",  $tabelaDados['DATA_CRIACAO']);
+					$vendedor = mysqli_query($conn, "SELECT * FROM FUNCIONARIOS WHERE ID = '" . $tabelaDados['VENDEDOR_ID'] . "'");
+					$vendedor = mysqli_fetch_array($vendedor);
 					echo "<td class='pesquisa-td borda'>" . $data[2] . "/" . $data[1] . "/" . $data[0] . "</td>";
-					echo "<td class='pesquisa-td borda'>" . $tabelaDados['VENDEDOR'] . "</td>";
+					echo "<td class='pesquisa-td borda'>" . $vendedor['NOME'] . "</td>";
 					echo "<td class='pesquisa-td borda'> R$ " . $tabelaDados['TOTAL'] . "</td>";
 					echo "<td class='pesquisa-td'> <a href='#' class='voltar2'>Var Detalhes</a> <a href='funcoesOrcamento.php?id=" . $tabelaDados['ID'] . "&f=del' class='apagar'>Apagar</a></td>";
 					echo "</tr>";

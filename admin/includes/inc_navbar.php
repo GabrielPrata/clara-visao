@@ -61,9 +61,39 @@ body {
         <li class="bold"><a href="../src/painel.php" class="waves-effect waves-cyan"><i class="mdi-action-dashboard"></i> Página de Orçamentos</a>
         </li>
 
-        <li class="bold"><a href="index.php" class="waves-effect waves-cyan"><i class="mdi-content-content-paste"></i> Início</a>
+        <?php $url = substr($_SERVER["REQUEST_URI"], strpos($_SERVER["REQUEST_URI"], 'admin/index.php')); ?>
+        <?php if ($url != "admin/index.php") { ?>
+        <li class="bold">
+          <a href="index.php" class="waves-effect waves-cyan"><i class="mdi-content-content-paste"></i> Início</a>
         </li>
+        <?php } else { ?>
+        <li class="bold active">
+          <a href="index.php" class="waves-effect waves-cyan"><i class="mdi-content-content-paste"></i> Início</a>
+        </li>
+        <?php } ?>
 
+        <?php $url = substr($_SERVER["REQUEST_URI"], strpos($_SERVER["REQUEST_URI"], 'admin/index.php')); ?>
+        <?php if ($url != "admin/index.php") { ?>
+        <li class="no-padding">
+          <ul class="collapsible collapsible-accordion">
+            <li class="bold"><a class="collapsible-header waves-effect waves-cyan"><i class="mdi-action-view-carousel"></i> Relatórios</a>
+              <div class="collapsible-body">
+                <ul>
+                  <li>
+                    <a href="#">Orçamentos</a>
+                  </li>
+                  <li>
+                    <a href="#">Funcionarios</a>
+                  </li>
+                  <li>
+                    <a href="#">Clientes</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </li>
+        <?php } else { ?>
         <li class="no-padding">
           <ul class="collapsible collapsible-accordion">
             <li class="bold"><a class="collapsible-header waves-effect waves-cyan active"><i class="mdi-action-view-carousel"></i> Relatórios</a>
@@ -83,6 +113,7 @@ body {
             </li>
           </ul>
         </li>
+        <?php } ?>
 
         <li class="no-padding">
           <ul class="collapsible collapsible-accordion">
@@ -90,13 +121,13 @@ body {
               <div class="collapsible-body">
                 <ul>
                   <li>
-                    <a href="#">Laboratório</a>
+                    <a href="cadastros.php?f=lab">Laboratório</a>
                   </li>
                   <li>
-                    <a href="#">Armação</a>
+                    <a href="cadastros.php?f=arm">Armação</a>
                   </li>
                   <li>
-                    <a href="#">Oftalmologista</a>
+                    <a href="cadastros.php?f=oft">Oftalmologista</a>
                   </li>
                 </ul>
               </div>
@@ -113,7 +144,7 @@ body {
                     <a href="#">Listar Orçamentos</a>
                   </li>
                   <li>
-                    <a href="#">Cadastrar Orçamento</a>
+                    <a href="../src/painel.php">Cadastrar Orçamento</a>
                   </li>
                 </ul>
               </div>

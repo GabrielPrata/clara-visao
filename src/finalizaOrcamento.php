@@ -111,7 +111,7 @@ if ($_GET['f'] == "c") {
 	// Verificar se existe alguma chave da array Medidas gravada como vazia e substitui-la por NULL
 	foreach ($medidas as $key => $value) {
 		if (empty($value) || $value === null) {
-			$medidas[$key] = "NULL";
+			$medidas[$key] = "0";
 		}
 	}
 
@@ -189,9 +189,9 @@ if ($_GET['f'] == "c") {
 	$medidasID = mysqli_insert_id($conn);
 
 	// Preparar para cadastrar o orçamento
-	$sql = "INSERT INTO ORCAMENTOS (CLIENTE, VENDEDOR_ID, DATA_CRIACAO, DATA_ENTREGA, OS, MEDIDAS, OFTALMOLOGISTA, ARMACAO, ARMACAO_REFERENCIA, ARMACAO_PRECO, ARMACAO_TIPO, LENTE, LENTE_PRECO, OBSERVACAO, LABORATORIO, PONTE_ARO, DIAG_MAIOR, VERTICAL, DESCONTO, TOTAL, FORMA_PAG, NUM_PARCELAS) ";
+	$sql = "INSERT INTO ORCAMENTOS (CLIENTE, VENDEDOR_ID, DATA_CRIACAO, DATA_ENTREGA, OS, MEDIDAS, OFTALMOLOGISTA, ARMACAO, COD_LOJA, ARMACAO_REFERENCIA, ARMACAO_PRECO, ARMACAO_TIPO, LENTE, LENTE_PRECO, OBSERVACAO, LABORATORIO, PONTE_ARO, DIAG_MAIOR, VERTICAL, DESCONTO, TOTAL, FORMA_PAG, NUM_PARCELAS) ";
 	$sql = $sql . " VALUES ";
-	$sql = $sql . " ('" . $clienteInfo['ID'] . "', '" . $funcionario['ID'] . "', '" . $cliente['txtDataEmissao'] . "', '" . $cliente['txtDataEntrega'] . "', '" . $cliente['textOS'] . "', '" . $medidasID . "', '" . $orcamento['txtOftalmologista'] . "', '" . $orcamento['txtArmacao'] . "', '" . $orcamento['txtArmacaoReferencia'] . "', '" . $orcamento['txtArmacaoPreco'] . "', '" . $orcamento['txtArmacaoTipo'] . "', '" . $orcamento['txtLente'] . "', '" . $orcamento['txtLentePreco'] . "', '" . $orcamento['txtObs'] . "', '" . $orcamento['txtLaboratorio'] . "', '" . $orcamento['txtPonte'] . "', '" . $orcamento['txtDiag'] . "', '" . $orcamento['txtVertical'] . "', '" . $orcamento['txtDesconto'] . "', '" . $orcamento['txtTotal'] . "', '" . $orcamento['txtFormaPag'] . "', '" . $orcamento['txtNumParcelas'] . "')";
+	$sql = $sql . " ('" . $clienteInfo['ID'] . "', '" . $funcionario['ID'] . "', '" . $cliente['txtDataEmissao'] . "', '" . $cliente['txtDataEntrega'] . "', '" . $cliente['textOS'] . "', '" . $medidasID . "', '" . $orcamento['txtOftalmologista'] . "', '" . $orcamento['txtArmacao'] . "', '" . $orcamento['txtCodLoja'] . "', '" . $orcamento['txtArmacaoReferencia'] . "', '" . $orcamento['txtArmacaoPreco'] . "', '" . $orcamento['txtArmacaoTipo'] . "', '" . $orcamento['txtLente'] . "', '" . $orcamento['txtLentePreco'] . "', '" . $orcamento['txtObs'] . "', '" . $orcamento['txtLaboratorio'] . "', '" . $orcamento['txtPonte'] . "', '" . $orcamento['txtDiag'] . "', '" . $orcamento['txtVertical'] . "', '" . $orcamento['txtDesconto'] . "', '" . $orcamento['txtTotal'] . "', '" . $orcamento['txtFormaPag'] . "', '" . $orcamento['txtNumParcelas'] . "')";
 
 	if (!mysqli_query($conn, $sql)) {
 		mysqli_free_result($clienteInfo);

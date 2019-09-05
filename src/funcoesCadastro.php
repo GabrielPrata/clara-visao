@@ -34,7 +34,7 @@ if ($_GET['f'] == "c") {
 
 		if (mysqli_query($conn, $sql)) {
 			mysqli_close($conn);
-			print "<script>alert('Cadastro efetuado com sucesso!'); window.location.href='cadastro.php?f=tipArmacao';</script>";
+			print "<script>alert('Cadastro efetuado com sucesso!'); window.location.href='cadastro.php?f=lab';</script>";
 		} else {
 			mysqli_close($conn);
 			echo"<script language='javascript' type='text/javascript'>alert('Ocorreu um erro ao cadastrar. Contate um administrador!'); history.go(-1)</script>"; //Erro 500, Ocorreu um erro ao cadastrar, contate um administrador

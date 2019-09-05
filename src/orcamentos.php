@@ -14,7 +14,8 @@ if (!$_GET['id']){
 }
 
 include 'conn.php';
-$id = $_GET['id'];
+
+$id = mysqli_real_escape_string($conn, $_GET['id']);
 $busca = mysqli_query($conn, "SELECT * FROM CLIENTES WHERE ID = '$id'");
 $dados = mysqli_fetch_array($busca);
 
@@ -27,15 +28,31 @@ $dados = mysqli_fetch_array($busca);
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>ClaraVisão | Orçamentos de <?php print $dados['CLIENTE']; ?></title>
-	<link rel="stylesheet" href="../css/pesquisas.css?version=78" media="screen,projection">
+	<link rel="stylesheet" href="../css/pesquisas.css?version=1212" media="screen,projection">
 	<link rel="stylesheet" href="../css/style.css" media="screen,projection">
-	<link rel="stylesheet" href="../css/extra.css?version=125" media="screen,projection">
+	<link rel="stylesheet" href="../css/extra.css?version=7878" media="screen,projection">
 	<link rel="stylesheet" href="../css/materialize.min.css" media="screen,projection">
 	<link rel="shortcut icon" href="../favicon.png" />
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
-	<!-- Incluir navbar no projeto -->
+	<?php 
+	$count = mysqli_num_rows($busca);
+	if ($count == 0) {
+		include '../includes/inc_navbar.php'; 
+		?>
+		<div class="container left">
+			<h3 class="erro404-h">Erro 404 - Página não existe</h3>
+			<p class="erro404-p">Seu cliente emitiu uma solicitação malformada ou ilegal.</p>
+		</div>
+		<?php
+		mysqli_free_result($conn);
+		mysqli_close($conn);
+		include '../includes/inc_footer.php';
+		exit();
+	}
+	?>
+
 	<?php 
 	include '../includes/inc_navbar.php'; 
 	$tabela = mysqli_query($conn, "SELECT * FROM ORCAMENTOS WHERE CLIENTE = '$id' ORDER BY DATA_CRIACAO DESC");
@@ -50,6 +67,7 @@ $dados = mysqli_fetch_array($busca);
 			<div class="container center" style="height: 300px; margin-top: 10%;">
 				<p>O cliente <span style="color: #4CBCC8; font-weight: bold;"><?php print $dados['CLIENTE']; ?></span> não possui orçamentos cadastrados.</p> <br>
 				<a href='pesquisar.php' class='voltar2'>Voltar</a>
+				<a href='observacoes.php?id=<?php print $id; ?>' class='obs'>Observações</a>
 			</div>
 
 			<?php
@@ -74,13 +92,15 @@ $dados = mysqli_fetch_array($busca);
 					echo "<td class='pesquisa-td borda'>" . $data[2] . "/" . $data[1] . "/" . $data[0] . "</td>";
 					echo "<td class='pesquisa-td borda'>" . $vendedor['NOME'] . "</td>";
 					echo "<td class='pesquisa-td borda'> R$ " . $tabelaDados['TOTAL'] . "</td>";
-					echo "<td class='pesquisa-td'> <a href='#' class='voltar2'>Var Detalhes</a> <a href='funcoesOrcamento.php?id=" . $tabelaDados['ID'] . "&f=del' class='apagar'>Apagar</a></td>";
+					echo "<td class='pesquisa-td'><a href='painel.php?f=details&user=" . $id . "&orc=" . $tabelaDados['ID'] . "' class='voltar2'>Var Detalhes</a> 
+					<a href='funcoesOrcamento.php?id=" . $tabelaDados['ID'] . "&f=del' class='apagar'>Apagar</a></td>";
 					echo "</tr>";
 				} ?>
 			</tbody>
 		</table>
 		<div class="margem">
 			<a href='pesquisar.php' class='voltar2'>Voltar</a>
+			<a href='observacoes.php?id=<?php print $id; ?>' class='obs'>Observações</a>
 		</div>
 		<?php } ?>
 	</div>

@@ -4,7 +4,7 @@
 <div class="container center bordas">
 	<form action="finalizaOrcamento.php?f=c" method="POST" accept-charset="utf-8">
 
-		<h4 class="titulo-form">Orçamento <span class="titulo-form-span">nº<?php print $orcamento; ?></span></h4>
+		<h4 class="titulo-form">Novo orçamento <span class="titulo-form-span">para <?php print $cliente['CLIENTE']; ?></span></h4>
 
 		<div class="cliente">
 			<table><caption class="titulo-grupo">Cliente</caption></table>
@@ -18,7 +18,7 @@
 							<label class="descricao name">Nome Completo<span class="obrigatorio">*</span> </label> 
 						</div>
 						<div class="col s8 m10">
-							<input class="caixa pesquisar" type="text" name="txtNomeCliente" id="txtNomeCliente" required">
+							<input class="caixa pesquisar" type="text" name="txtNomeCliente" id="txtNomeCliente" required value="<?php print $cliente['CLIENTE']; ?>">
 							<a href="" class="caixaPesquisa" onclick="this.href='consultaCliente.php?name='+document.getElementById('txtNomeCliente').value"><img class="lupa" src="../img/lupa.png" width="33" height="auto" alt="Pesquisar"></a>
 						</div>
 					</div>
@@ -29,7 +29,7 @@
 								<label class="descricao">Profissão</label>
 							</div>
 							<div class="col s8 m9">
-								<input class="caixa" type="text" name="txtProfissao">
+								<input class="caixa" type="text" name="txtProfissao" value="<?php print $cliente['PROFISSAO']; ?>">
 							</div>
 
 						</div>
@@ -38,7 +38,7 @@
 								<label class="descricao">Data Nasc.<span class="obrigatorio">*</span></label>
 							</div>
 							<div class="col s8 m8">
-								<input class="caixa" type="date" name="txtDataNascimento" required value="<?php echo date('Y-m-d', strtotime(' -18 years ')); ?>">
+								<input class="caixa" type="date" name="txtDataNascimento" required value="<?php print $cliente['DATA_NASCIMENTO']; ?>">
 							</div>
 						</div>
 					</div>
@@ -49,7 +49,7 @@
 								<label class="descricao">Telefone 1<span class="obrigatorio">*</span></label>
 							</div>
 							<div class="col s8 m9">
-								<input class="caixa" type="text" name="txtTelefone1" required>
+								<input class="caixa" type="text" name="txtTelefone1" required value="<?php print $cliente['TELEFONE_1']; ?>">
 							</div>
 						</div>
 						<div class="col s12 m6 divide">
@@ -57,7 +57,7 @@
 								<label class="descricao">Telefone 2</label>
 							</div>
 							<div class="col s8 m8" >
-								<input class="caixa" type="text" name="txtTelefone2">
+								<input class="caixa" type="text" name="txtTelefone2" value="<?php print $cliente['TELEFONE_2']; ?>">
 							</div>
 						</div>
 					</div>
@@ -68,7 +68,7 @@
 								<label class="descricao">Cidade</label>
 							</div>
 							<div class="col s8 m9">
-								<input class="caixa" type="text" name="txtCidade" value="Descalvado">
+								<input class="caixa" type="text" name="txtCidade" value="<?php print $cliente['CIDADE']; ?>">
 							</div>
 						</div>
 						<div class="col s12 m6 divide">
@@ -434,9 +434,9 @@
 				<br>
 				<div style="margin-top: -15px !important;">
 					<input type="image" src="../img/check.png" name="finalizar orcamento" value="Finalizar Orçamento" width="85" height="auto" style="margin-bottom: -3.5px !important;">
-					<a href=""><img src="../img/eraser.png" alt="Limpar Dados" width="75" height="auto"></a>
+					<a href="painel.php"><img src="../img/eraser.png" alt="Limpar Dados" width="75" height="auto"></a>
 					<a href=""><img src="../img/printer.png" alt="Imprimir" width="75" height="auto"></a>
-					<a href="#"><img src="../img/obs.png" alt="Observações" width="75" height="auto" onclick="alert('Conclua o cadastro do cliente para verificar as observações.')"></a>
+					<a href="observacoes.php?id=<?php print $cliente['ID']; ?>" target="__blank"><img src="../img/obs.png" alt="Observações" width="75" height="auto"></a>
 				</div>
 			</div>
 		</div>

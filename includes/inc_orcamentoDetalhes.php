@@ -4,7 +4,7 @@
 <div class="container center bordas">
 	<form action="finalizaOrcamento.php?f=c" method="POST" accept-charset="utf-8">
 
-		<h4 class="titulo-form">Orçamento <span class="titulo-form-span">nº<?php print $orcamento; ?></span></h4>
+		<h4 class="titulo-form">Orçamento <span class="titulo-form-span">de <?php print $cliente['CLIENTE']; ?></span></h4>
 
 		<div class="cliente">
 			<table><caption class="titulo-grupo">Cliente</caption></table>
@@ -18,7 +18,7 @@
 							<label class="descricao name">Nome Completo<span class="obrigatorio">*</span> </label> 
 						</div>
 						<div class="col s8 m10">
-							<input class="caixa pesquisar" type="text" name="txtNomeCliente" id="txtNomeCliente" required">
+							<input class="caixa pesquisar" type="text" name="txtNomeCliente" id="txtNomeCliente" required" value="<?php print $cliente['CLIENTE']; ?>">
 							<a href="" class="caixaPesquisa" onclick="this.href='consultaCliente.php?name='+document.getElementById('txtNomeCliente').value"><img class="lupa" src="../img/lupa.png" width="33" height="auto" alt="Pesquisar"></a>
 						</div>
 					</div>
@@ -29,7 +29,7 @@
 								<label class="descricao">Profissão</label>
 							</div>
 							<div class="col s8 m9">
-								<input class="caixa" type="text" name="txtProfissao">
+								<input class="caixa" type="text" name="txtProfissao" value="<?php print $cliente['PROFISSAO']; ?>">
 							</div>
 
 						</div>
@@ -38,7 +38,7 @@
 								<label class="descricao">Data Nasc.<span class="obrigatorio">*</span></label>
 							</div>
 							<div class="col s8 m8">
-								<input class="caixa" type="date" name="txtDataNascimento" required value="<?php echo date('Y-m-d', strtotime(' -18 years ')); ?>">
+								<input class="caixa" type="date" name="txtDataNascimento" required value="<?php print $cliente['DATA_NASCIMENTO']; ?>">
 							</div>
 						</div>
 					</div>
@@ -49,7 +49,7 @@
 								<label class="descricao">Telefone 1<span class="obrigatorio">*</span></label>
 							</div>
 							<div class="col s8 m9">
-								<input class="caixa" type="text" name="txtTelefone1" required>
+								<input class="caixa" type="text" name="txtTelefone1" required value="<?php print $cliente['TELEFONE_1']; ?>">
 							</div>
 						</div>
 						<div class="col s12 m6 divide">
@@ -57,7 +57,7 @@
 								<label class="descricao">Telefone 2</label>
 							</div>
 							<div class="col s8 m8" >
-								<input class="caixa" type="text" name="txtTelefone2">
+								<input class="caixa" type="text" name="txtTelefone2" value="<?php print $cliente['TELEFONE_2']; ?>">
 							</div>
 						</div>
 					</div>
@@ -68,7 +68,7 @@
 								<label class="descricao">Cidade</label>
 							</div>
 							<div class="col s8 m9">
-								<input class="caixa" type="text" name="txtCidade" value="Descalvado">
+								<input class="caixa" type="text" name="txtCidade" value="<?php print $cliente['CIDADE']; ?>">
 							</div>
 						</div>
 						<div class="col s12 m6 divide">
@@ -105,7 +105,7 @@
 								<label class="descricao">Data</label>
 							</div>
 							<div class="col s8 m9">
-								<input class="caixa" type="date" name="txtDataEmissao" value="<?php echo date('Y-m-d'); ?>">
+								<input class="caixa" type="date" name="txtDataEmissao" value="<?php print $orcamentos['DATA_CRIACAO']; ?>">
 							</div>
 						</div>
 						<div class="col s12 m6 divide">
@@ -113,7 +113,7 @@
 								<label class="descricao">Data Entrega</label>
 							</div>
 							<div class="col s8 m8">
-								<input class="caixa" type="date" name="txtDataEntrega" value="<?php echo date('Y-m-d', strtotime(' +12 days ')); ?>">
+								<input class="caixa" type="date" name="txtDataEntrega" value="<?php print $orcamentos['DATA_ENTREGA']; ?>">
 							</div>
 						</div>
 					</div>
@@ -137,7 +137,7 @@
 									<label class="descricao">O.S</label>
 								</div>
 								<div class="col s7 m9">
-									<input class="caixa" type="text" name="textOS" size="3">
+									<input class="caixa" type="text" name="textOS" size="3" value="<?php print $orcamentos['OS']; ?>">
 								</div>
 							</td>
 						</tr>
@@ -165,62 +165,62 @@
 					<tr>
 						<td>LONGE</td>
 						<td>OD</td>
-						<td><input type="text" name="txtLongeESF_OD" class="tabelaCampo"></td>
-						<td><input type="text" name="txtLongeCIL_OD" class="tabelaCampo"></td>
-						<td><input type="text" name="txtLongeEIXO_OD" class="tabelaCampo"></td>
-						<td><input type="text" name="txtLongeADICAO_OD" class="tabelaCampo"></td>
-						<td><input type="text" name="txtLongeDNP_OD" class="tabelaCampo"></td>
-						<td><input type="text" name="txtLongeALTURA_OD" class="tabelaCampo"></td>
+						<td><input type="text" name="txtLongeESF_OD" class="tabelaCampo" value="<?php print $medidas['LONGE_OD_ESF']; ?>"></td>
+						<td><input type="text" name="txtLongeCIL_OD" class="tabelaCampo" value="<?php print $medidas['LONGE_OD_CIL']; ?>"></td>
+						<td><input type="text" name="txtLongeEIXO_OD" class="tabelaCampo" value="<?php print $medidas['LONGE_OD_EIXO']; ?>"></td>
+						<td><input type="text" name="txtLongeADICAO_OD" class="tabelaCampo" value="<?php print $medidas['LONGE_OD_ADICAO']; ?>"></td>
+						<td><input type="text" name="txtLongeDNP_OD" class="tabelaCampo" value="<?php print $medidas['LONGE_OD_DNP']; ?>"></td>
+						<td><input type="text" name="txtLongeALTURA_OD" class="tabelaCampo" value="<?php print $medidas['LNGE_OD_ALTURA']; ?>"></td>
 					</tr>
 					<tr>
 						<td></td>
 						<td>OE</td>
-						<td><input type="text" name="txtLongeESF_OE" class="tabelaCampo"></td>
-						<td><input type="text" name="txtLongeCIL_OE" class="tabelaCampo"></td>
-						<td><input type="text" name="txtLongeEIXO_OE" class="tabelaCampo"></td>
-						<td><input type="text" name="txtLongeADICAO_OE" class="tabelaCampo"></td>
-						<td><input type="text" name="txtLongeDNP_OE" class="tabelaCampo"></td>
-						<td><input type="text" name="txtLongeALTURA_OE" class="tabelaCampo"></td>
+						<td><input type="text" name="txtLongeESF_OE" class="tabelaCampo" value="<?php print $medidas['LONGE_OE_ESF']; ?>"></td>
+						<td><input type="text" name="txtLongeCIL_OE" class="tabelaCampo" value="<?php print $medidas['LONGE_OE_CIL']; ?>"></td>
+						<td><input type="text" name="txtLongeEIXO_OE" class="tabelaCampo" value="<?php print $medidas['LONGE_OE_EIXO']; ?>"></td>
+						<td><input type="text" name="txtLongeADICAO_OE" class="tabelaCampo" value="<?php print $medidas['LONGE_OE_ADICAO']; ?>"></td>
+						<td><input type="text" name="txtLongeDNP_OE" class="tabelaCampo" value="<?php print $medidas['LONGE_OE_DNP']; ?>"></td>
+						<td><input type="text" name="txtLongeALTURA_OE" class="tabelaCampo" value="<?php print $medidas['LONGE_OE_ALTURA']; ?>"></td>
 					</tr>
 					<tr>
 						<td>PERTO</td>
 						<td>OD</td>
-						<td><input type="text" name="txtPertoESF_OD" class="tabelaCampo"></td>
-						<td><input type="text" name="txtPertoCIL_OD" class="tabelaCampo"></td>
-						<td><input type="text" name="txtPertoEIXO_OD" class="tabelaCampo"></td>
-						<td><input type="text" name="txtPertoADICAO_OD" class="tabelaCampo"></td>
-						<td><input type="text" name="txtPertoDNP_OD" class="tabelaCampo"></td>
-						<td><input type="text" name="txtPertoALTURA_OD" class="tabelaCampo"></td>
+						<td><input type="text" name="txtPertoESF_OD" class="tabelaCampo" value="<?php print $medidas['PERTO_OD_ESF']; ?>"></td>
+						<td><input type="text" name="txtPertoCIL_OD" class="tabelaCampo" value="<?php print $medidas['PERTO_OD_CIL']; ?>"></td>
+						<td><input type="text" name="txtPertoEIXO_OD" class="tabelaCampo" value="<?php print $medidas['PERTO_OD_EIXO']; ?>"></td>
+						<td><input type="text" name="txtPertoADICAO_OD" class="tabelaCampo" value="<?php print $medidas['PERTO_OD_ADICAO']; ?>"></td>
+						<td><input type="text" name="txtPertoDNP_OD" class="tabelaCampo" value="<?php print $medidas['PERTO_OD_DNP']; ?>"></td>
+						<td><input type="text" name="txtPertoALTURA_OD" class="tabelaCampo" value="<?php print $medidas['PERTO_OD_ALTURA']; ?>"></td>
 					</tr>
 					<tr>
 						<td></td>
 						<td>OE</td>
-						<td><input type="text" name="txtPertoESF_OE" class="tabelaCampo"></td>
-						<td><input type="text" name="txtPertoCIL_OE" class="tabelaCampo"></td>
-						<td><input type="text" name="txtPertoEIXO_OE" class="tabelaCampo"></td>
-						<td><input type="text" name="txtPertoADICAO_OE" class="tabelaCampo"></td>
-						<td><input type="text" name="txtPertoDNP_OE" class="tabelaCampo"></td>
-						<td><input type="text" name="txtPertoALTURA_OE" class="tabelaCampo"></td>
+						<td><input type="text" name="txtPertoESF_OE" class="tabelaCampo" value="<?php print $medidas['PERTO_OE_ESF']; ?>"></td>
+						<td><input type="text" name="txtPertoCIL_OE" class="tabelaCampo" value="<?php print $medidas['PERTO_OE_CIL']; ?>"></td>
+						<td><input type="text" name="txtPertoEIXO_OE" class="tabelaCampo" value="<?php print $medidas['PERTO_OE_EIXO']; ?>"></td>
+						<td><input type="text" name="txtPertoADICAO_OE" class="tabelaCampo" value="<?php print $medidas['PERTO_OE_ADICAO']; ?>"></td>
+						<td><input type="text" name="txtPertoDNP_OE" class="tabelaCampo" value="<?php print $medidas['PERTO_OE_DNP']; ?>"></td>
+						<td><input type="text" name="txtPertoALTURA_OE" class="tabelaCampo" value="<?php print $medidas['PERTO_OE_ALTURA']; ?>"></td>
 					</tr>
 					<tr>
 						<td>MÉDIA</td>
 						<td>OD</td>
-						<td><input type="text" name="txtMediaESF_OD" class="tabelaCampo"></td>
-						<td><input type="text" name="txtMediaCIL_OD" class="tabelaCampo"></td>
-						<td><input type="text" name="txtMediaEIXO_OD" class="tabelaCampo"></td>
-						<td><input type="text" name="txtMediaADICAO_OD" class="tabelaCampo"></td>
-						<td><input type="text" name="txtMediaDNP_OD" class="tabelaCampo"></td>
-						<td><input type="text" name="txtMediaALTURA_OD" class="tabelaCampo"></td>
+						<td><input type="text" name="txtMediaESF_OD" class="tabelaCampo" value="<?php print $medidas['MEDIA_OD_ESF']; ?>"></td>
+						<td><input type="text" name="txtMediaCIL_OD" class="tabelaCampo" value="<?php print $medidas['MEDIA_OD_CIL']; ?>"></td>
+						<td><input type="text" name="txtMediaEIXO_OD" class="tabelaCampo" value="<?php print $medidas['MEDIA_OD_EIXO']; ?>"></td>
+						<td><input type="text" name="txtMediaADICAO_OD" class="tabelaCampo" value="<?php print $medidas['MEDIA_OD_ADICAO']; ?>"></td>
+						<td><input type="text" name="txtMediaDNP_OD" class="tabelaCampo" value="<?php print $medidas['MEDIA_OD_DNP']; ?>"></td>
+						<td><input type="text" name="txtMediaALTURA_OD" class="tabelaCampo" value="<?php print $medidas['MEDIA_OD_ALTURA']; ?>"></td>
 					</tr>
 					<tr>
 						<td></td>
 						<td>OE</td>
-						<td><input type="text" name="txtMediaESF_OE" class="tabelaCampo"></td>
-						<td><input type="text" name="txtMediaCIL_OE" class="tabelaCampo"></td>
-						<td><input type="text" name="txtMediaEIXO_OE" class="tabelaCampo"></td>
-						<td><input type="text" name="txtMediaADICAO_OE" class="tabelaCampo"></td>
-						<td><input type="text" name="txtMediaDNP_OE" class="tabelaCampo"></td>
-						<td><input type="text" name="txtMediaALTURA_OE" class="tabelaCampo"></td>
+						<td><input type="text" name="txtMediaESF_OE" class="tabelaCampo" value="<?php print $medidas['MEDIA_OE_ESF']; ?>"></td>
+						<td><input type="text" name="txtMediaCIL_OE" class="tabelaCampo" value="<?php print $medidas['MEDIA_OE_CIL']; ?>"></td>
+						<td><input type="text" name="txtMediaEIXO_OE" class="tabelaCampo" value="<?php print $medidas['MEDIA_OE_EIXO']; ?>"></td>
+						<td><input type="text" name="txtMediaADICAO_OE" class="tabelaCampo" value="<?php print $medidas['MEDIA_OE_ADICAO']; ?>"></td>
+						<td><input type="text" name="txtMediaDNP_OE" class="tabelaCampo" value="<?php print $medidas['MEDIA_OE_DNP']; ?>"></td>
+						<td><input type="text" name="txtMediaALTURA_OE" class="tabelaCampo" value="<?php print $medidas['MEDIA_OE_ALTURA']; ?>"></td>
 					</tr>
 				</table>
 				<div class="container oftalmo">
@@ -229,7 +229,7 @@
 							<label class="descricao">Oftalmologista</label>
 						</div>
 						<div class="col s8 m9">
-							<input class="caixa pesquisar" type="text" name="txtOftalmologista">
+							<input class="caixa pesquisar" type="text" name="txtOftalmologista" value="<?php print $orcamentos['OFTALMOLOGISTA']; ?>">
 							<a href="#" class="caixaPesquisa"><img class="lupa" src="../img/lupa.png" width="33" height="auto" alt="Pesquisar"></a>
 						</div>
 					</div>
@@ -246,7 +246,7 @@
 								<label class="descricao">Armação</label>
 							</div>
 							<div class="col s8 m9">
-								<input class="caixa" type="text" name="txtArmacao">
+								<input class="caixa" type="text" name="txtArmacao" value="<?php print $orcamentos['ARMACAO']; ?>">
 							</div>
 						</div>
 						<div class="col s12 m4 divide">
@@ -254,7 +254,7 @@
 								<label class="descricao">Referencia</label>
 							</div>
 							<div class="col s8 m9">
-								<input class="caixa" type="text" name="txtArmacaoReferencia">
+								<input class="caixa" type="text" name="txtArmacaoReferencia" value="<?php print $orcamentos['ARMACAO_REFERENCIA']; ?>">
 							</div>
 						</div>
 						<div class="col s12 m4 divide">
@@ -262,7 +262,7 @@
 								<label class="descricao">Cód. Loja</label>
 							</div>
 							<div class="col s8 m8">
-								<input class="caixa" type="text" name="txtCodLoja">
+								<input class="caixa" type="text" name="txtCodLoja" value="<?php print $orcamentos['COD_LOJA']; ?>">
 							</div>
 						</div>
 					</div>
@@ -272,7 +272,7 @@
 							<label class="descricao">Lente</label>
 						</div>
 						<div class="col s8 m11">
-							<input class="caixa" type="text" name="txtLente">
+							<input class="caixa" type="text" name="txtLente" value="<?php print $orcamentos['LENTE']; ?>">
 						</div>
 					</div>
 
@@ -281,7 +281,7 @@
 							<label class="descricao obsdioptrias">Obs.</label>
 						</div>
 						<div class="col s8 m11">
-							<textarea class="materialize-textarea texcaixa" style="margin-top: -10px !important;" name="txtObs"></textarea>
+							<textarea class="materialize-textarea texcaixa" style="margin-top: -10px !important;" name="txtObs"><?php print $orcamentos['OBSERVACAO']; ?></textarea>
 						</div>
 					</div>
 
@@ -293,14 +293,22 @@
 							<div class="col s8 m11">
 								<select name="txtLaboratorio" class="caixa" required>
 									<?php 
+									$query = mysqli_query($conn, "SELECT * FROM LABORATORIOS WHERE ID='" . $orcamentos['LABORATORIO'] . "'");
+									$lab = mysqli_fetch_array($query);
+
 									$query = mysqli_query($conn, "SELECT * FROM LABORATORIOS");
 									$count = mysqli_num_rows($query);
 
 									if ($count == 0) {
 										?> <option value="" disabled="" selected="">Cadastre um Laboratorio</option> <?php
 									} else {
+										?> <option value="<?php print $lab['ID'] ?>" selected=""><?php print $lab['NOME'] ?></option> <?php
 										while ($array = mysqli_fetch_array($query)) {
-											?> <option value="<?php print $array['ID']; ?>"><?php print $array['NOME']; ?></option> <?php
+											if ($array['ID'] != $orcamentos['LABORATORIO']) {
+												?> 
+												<option value="<?php print $array['ID']; ?>"><?php print $array['NOME']; ?></option>
+												<?php
+											}
 										}
 									}
 									?>
@@ -314,14 +322,22 @@
 							<div class="col s8 m9">
 								<select name="txtArmacaoTipo" class="caixa divide" required>
 									<?php 
+									$query = mysqli_query($conn, "SELECT * FROM ARMACAO WHERE ID='" . $orcamentos['ARMACAO_TIPO'] . "'");
+									$arm = mysqli_fetch_array($query);
+
 									$query = mysqli_query($conn, "SELECT * FROM ARMACAO");
 									$count = mysqli_num_rows($query);
 
 									if ($count == 0) {
 										?> <option value="" disabled="" selected="">Cadastre um Tipo de Armação</option> <?php
 									} else {
+										?> <option value="<?php print $arm['ID'] ?>" selected=""><?php print $arm['ARMACAO'] ?></option> <?php
 										while ($array = mysqli_fetch_array($query)) {
-											?> <option value="<?php print $array['ID']; ?>"><?php print $array['ARMACAO']; ?></option> <?php
+											if ($array['ID'] != $orcamentos['ARMACAO_TIPO']) {
+												?> 
+												<option value="<?php print $array['ID']; ?>"><?php print $array['ARMACAO']; ?></option> 
+												<?php
+											}
 										}
 									}
 									?>
@@ -336,7 +352,7 @@
 								<label class="descricao">Ponte+Aro</label>
 							</div>
 							<div class="col s8 m9">
-								<input class="caixa" type="text" name="txtPonte">
+								<input class="caixa" type="text" name="txtPonte" value="<?php print $orcamentos['PONTE_ARO']; ?>">
 							</div>
 						</div>
 
@@ -345,7 +361,7 @@
 								<label class="descricao">Diag. Maior</label>
 							</div>
 							<div class="col s8 m8">
-								<input class="caixa" type="text" name="txtDiag">
+								<input class="caixa" type="text" name="txtDiag" value="<?php print $orcamentos['DIAG_MAIOR']; ?>">
 							</div>
 						</div>
 
@@ -354,7 +370,7 @@
 								<label class="descricao">Vertical</label>
 							</div>
 							<div class="col s8 m9">
-								<input class="caixa" type="text" name="txtVertical">
+								<input class="caixa" type="text" name="txtVertical" value="<?php print $orcamentos['VERTICAL']; ?>">
 							</div>
 						</div>
 					</div>
@@ -371,7 +387,7 @@
 								<label class="descricao">Armação R$</label>
 							</div>
 							<div class="col s8 m8">
-								<input class="caixa" id="txtArmacaoPreco" type="text" name="txtArmacaoPreco" min="0" placeholder="0,00" onkeyup="atualizaPreco()">
+								<input class="caixa" id="txtArmacaoPreco" type="text" name="txtArmacaoPreco" min="0" placeholder="0,00" onkeyup="atualizaPreco()" value="<?php print $orcamentos['ARMACAO_PRECO']; ?>">
 							</div>
 						</div>
 						<div class="col s12 m4 divide">
@@ -379,7 +395,7 @@
 								<label class="descricao">Lente R$</label>
 							</div>
 							<div class="col s8 m8">
-								<input class="caixa" id="txtLentePreco" type="text" name="txtLentePreco" min="0" placeholder="0,00" onkeyup="atualizaPreco()">
+								<input class="caixa" id="txtLentePreco" type="text" name="txtLentePreco" min="0" placeholder="0,00" onkeyup="atualizaPreco()" value="<?php print $orcamentos['LENTE_PRECO']; ?>">
 							</div>
 						</div>
 						<div class="col s12 m4 divide">
@@ -387,7 +403,7 @@
 								<label class="descricao">Desconto R$</label>
 							</div>
 							<div class="col s8 m8">
-								<input class="caixa" id="txtDesconto" type="text" name="txtDesconto" min="0" placeholder="0,00" onkeyup="atualizaPreco()">
+								<input class="caixa" id="txtDesconto" type="text" name="txtDesconto" min="0" placeholder="0,00" onkeyup="atualizaPreco()" value="<?php print $orcamentos['DESCONTO']; ?>">
 							</div>
 						</div>
 					</div>
@@ -399,7 +415,7 @@
 								<label class="descricao">Total R$</label>
 							</div>
 							<div class="col s8 m8">
-								<input class="caixa" id="txtTotal" type="text" name="txtTotal" min="0" readonly="true" placeholder="0,00">
+								<input class="caixa" id="txtTotal" type="text" name="txtTotal" min="0" readonly="true" placeholder="0,00" value="<?php print $orcamentos['TOTAL']; ?>">
 							</div>
 						</div>
 
@@ -408,14 +424,33 @@
 								<label class="descricao">Forma Pag.</label>
 							</div>
 							<div class="col s8 m8">
-								<select name="txtFormaPag" class="caixa" required>
-									<option value="aDefinir" selected="">À definir</option>
+							<select name="txtFormaPag" class="caixa" required>
+								<?php 
+									$valores = array(
+										'aDefinir' => 'À definir',
+										'dinheiro' => 'Dinheiro',
+										'cartaoDebito' => 'Cartão de Débito',
+										'cartaoCredito' => 'Cartão de Crédito',
+										'cheque' => 'Cheque',
+										'crediarioProprio' => 'Crediário Próprio',
+										'crediarioTerceiro' => 'Crediário Terceiro' 
+									);
+
+									foreach ($valores as $key => $value) {
+										if ($key == $orcamentos['FORMA_PAG']) {
+											?> <option value="<?php print $key; ?>" selected=""><?php print $value; ?></option> <?php
+										} else {
+											?> <option value="<?php print $key; ?>"><?php print $value; ?></option> <?php
+										}
+									}
+								?>
+									<!--<option value="aDefinir" selected="">À definir</option>
 									<option value="dinheiro">Dinheiro</option>
 									<option value="cartaoDebito">Cartão de Débito</option>
 									<option value="cartaoCredito">Cartão de Crédito</option>
 									<option value="cheque">Cheque</option>
 									<option value="crediarioProprio">Crediário Próprio</option>
-									<option value="crediarioTerceiro">Crediário Terceiro</option>
+									<option value="crediarioTerceiro">Crediário Terceiro</option>-->
 								</select>
 							</div>
 						</div>
@@ -425,7 +460,7 @@
 								<label class="descricao">Num. Parce.</label>
 							</div>
 							<div class="col s8 m8">
-								<input class="caixa" type="text" name="txtNumParcelas" value="0">
+								<input class="caixa" type="text" name="txtNumParcelas" value="<?php print $orcamentos['NUM_PARCELAS']; ?>">
 							</div>
 						</div>
 					</div>
@@ -434,9 +469,9 @@
 				<br>
 				<div style="margin-top: -15px !important;">
 					<input type="image" src="../img/check.png" name="finalizar orcamento" value="Finalizar Orçamento" width="85" height="auto" style="margin-bottom: -3.5px !important;">
-					<a href=""><img src="../img/eraser.png" alt="Limpar Dados" width="75" height="auto"></a>
+					<a href="painel.php"><img src="../img/eraser.png" alt="Limpar Dados" width="75" height="auto"></a>
 					<a href=""><img src="../img/printer.png" alt="Imprimir" width="75" height="auto"></a>
-					<a href="#"><img src="../img/obs.png" alt="Observações" width="75" height="auto" onclick="alert('Conclua o cadastro do cliente para verificar as observações.')"></a>
+					<a href="observacoes.php?id=<?php print $cliente['ID']; ?>" target="__blank"><img src="../img/obs.png" alt="Observações" width="75" height="auto"></a>
 				</div>
 			</div>
 		</div>

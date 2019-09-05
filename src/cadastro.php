@@ -33,6 +33,7 @@ if (!isset($_GET['f'])) {
 	} 
 	?></title>
 	<link rel="stylesheet" href="../css/materialize.min.css" media="screen,projection">
+	<link rel='stylesheet' href='../css/pesquisas.css' media='screen,projection'>
 	<link rel="shortcut icon" href="../favicon.png" />
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
@@ -49,6 +50,13 @@ if (!isset($_GET['f'])) {
 		include '../includes/inc_cadCliente.php'; 
 	} elseif ($_GET['f'] == "oftalmologista") {
 		include '../includes/inc_cadOftalmologista.php'; 
+	} else {
+		?>
+		<div class="container left">
+			<h3 class="erro404-h">Erro 404 - Página não existe</h3>
+			<p class="erro404-p">Seu cliente emitiu uma solicitação malformada ou ilegal.</p>
+		</div>
+		<?php
 	}
 
 	include '../includes/inc_footer.php'; 

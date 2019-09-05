@@ -17,6 +17,28 @@
 	border-radius: 10px !important;
 }
 
+.obs {
+	color: white !important;
+	text-transform: uppercase;
+	font-weight: bold;
+	background-color: orange !important;
+	padding: 10px 20px;
+	font-size: 12px;
+	border-radius: 10px !important;
+}
+
+.obs2 {
+	color: white !important;
+	text-transform: uppercase;
+	font-weight: bold;
+	background-color: orange !important;
+	padding: 11px 21px;
+	font-size: 12px;
+	border-radius: 10px !important;
+	box-shadow: none !important;
+	border: none !important;
+}
+
 .apagar {
 	color: white !important;
 	text-transform: uppercase;
@@ -73,4 +95,36 @@
 
 .margem {
 	margin-bottom: 5%;
+}
+
+.margem2 {
+	margin-top: 5%;
+	margin-bottom: 5%;
+}
+
+.textareaObs {
+	background-color: white !important;
+	border-radius: 5px !important;
+	border: none !important;
+	max-width: 100% !important;
+	min-width: 100% !important;
+	min-height: 200px !important;
+}
+
+.erro404-h {
+	font-weight: bold !important;
+	font-size: 25px !important;
+	margin-top: 100px;
+}
+
+.erro404-p {
+	margin-bottom: 250px;
+}
+
+.margem-top {
+	margin-top: 50px;
+}
+
+.margem-bottom {
+	margin-bottom: 100px;
 }

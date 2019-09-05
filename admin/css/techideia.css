@@ -1,0 +1,27 @@
+@media screen and (min-width: 995px) {
+	.container {
+		margin-left: 250px !important;
+	}
+
+	.cont-imagem {
+		margin-left: -150px !important;
+	}
+
+	.alinhar {
+		margin-left: -250px !important;
+	}
+}
+
+.erro404-h {
+	font-weight: bold !important;
+	font-size: 25px !important;
+	margin-top: 100px;
+}
+
+.erro404-p {
+	margin-bottom: 250px;
+}
+
+.error-c {
+	margin-left: 10%;
+}

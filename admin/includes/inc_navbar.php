@@ -129,6 +129,9 @@ body {
                   <li>
                     <a href="cadastros.php?f=oft">Oftalmologista</a>
                   </li>
+                  <li>
+                    <a href="cadastros.php?f=cliente">Cliente</a>
+                  </li>
                 </ul>
               </div>
             </li>

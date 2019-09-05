@@ -42,6 +42,7 @@ $admin = mysqli_fetch_array($admin);
 	<!-- CORE CSS-->
 	<link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection">
 	<link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection">
+	<link href="css/techideia.css?version=8787" type="text/css" rel="stylesheet" media="screen,projection">
 	<!-- Custome CSS-->    
 	<link href="css/custom/custom-style.css" type="text/css" rel="stylesheet" media="screen,projection">
 
@@ -60,8 +61,25 @@ $admin = mysqli_fetch_array($admin);
 	</div>
 	<!-- End Page Loading -->
 
-	<?php include 'includes/inc_navbar.php'; ?>
+	<?php include 'includes/inc_navbar.php'; 
 
+	if ($_GET['f'] == "lab") {
+		include 'includes/inc_cadLab.php'; 
+	} elseif ($_GET['f'] == "arm") {
+		include 'includes/inc_cadTipoArmacao.php'; 
+	} elseif ($_GET['f'] == "cliente") {
+		include 'includes/inc_cadCliente.php'; 
+	} elseif ($_GET['f'] == "oft") {
+		include 'includes/inc_cadOftalmologista.php'; 
+	} else {
+		?>
+		<div class="container left error-c">
+			<h3 class="erro404-h">Erro 404 - Página não existe</h3>
+			<p class="erro404-p">Seu cliente emitiu uma solicitação malformada ou ilegal.</p>
+		</div>
+		<?php
+	}
+	?>
 	<!-- Scripts Js -->
 
 	<script type="text/javascript" src="js/plugins/jquery-1.11.2.min.js"></script>    

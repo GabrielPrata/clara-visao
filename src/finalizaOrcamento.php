@@ -28,8 +28,7 @@ if ($_GET['f'] == "c") {
 		'txtVendedor' =>  mysqli_real_escape_string($conn, $_POST['txtVendedor']), 
 		'txtDataEmissao' =>  mysqli_real_escape_string($conn, $_POST['txtDataEmissao']), 
 		'txtDataEntrega' =>  mysqli_real_escape_string($conn, $_POST['txtDataEntrega']), 
-		'textOS' =>  mysqli_real_escape_string($conn, $_POST['textOS'])
-	);
+		'textOS' =>  mysqli_real_escape_string($conn, $_POST['textOS']));
 	$medidas = array(
 		'txtLongeESF_OD' =>  mysqli_real_escape_string($conn, $_POST['txtLongeESF_OD']),
 		'txtLongeCIL_OD' =>  mysqli_real_escape_string($conn, $_POST['txtLongeCIL_OD']), 
@@ -66,8 +65,7 @@ if ($_GET['f'] == "c") {
 		'txtMediaEIXO_OE' =>  mysqli_real_escape_string($conn, $_POST['txtMediaEIXO_OE']), 
 		'txtMediaADICAO_OE' =>  mysqli_real_escape_string($conn, $_POST['txtMediaADICAO_OE']), 
 		'txtMediaDNP_OE' =>  mysqli_real_escape_string($conn, $_POST['txtMediaDNP_OE']), 
-		'txtMediaALTURA_OE' =>  mysqli_real_escape_string($conn, $_POST['txtMediaALTURA_OE'])
-	);
+		'txtMediaALTURA_OE' =>  mysqli_real_escape_string($conn, $_POST['txtMediaALTURA_OE']));
 	$orcamento = array(
 		'txtOftalmologista' =>  mysqli_real_escape_string($conn, $_POST['txtOftalmologista']),
 		'txtArmacao' =>  mysqli_real_escape_string($conn, $_POST['txtArmacao']),
@@ -85,8 +83,7 @@ if ($_GET['f'] == "c") {
 		'txtDesconto' =>  mysqli_real_escape_string($conn, $_POST['txtDesconto']),
 		'txtTotal' =>  mysqli_real_escape_string($conn, $_POST['txtTotal']),
 		'txtFormaPag' =>  mysqli_real_escape_string($conn, $_POST['txtFormaPag']),
-		'txtNumParcelas' =>  mysqli_real_escape_string($conn, $_POST['txtNumParcelas'])
-	);
+		'txtNumParcelas' =>  mysqli_real_escape_string($conn, $_POST['txtNumParcelas']));
 
 	//Verificar se o vendedor existe
 	if ($cliente['txtVendedorCod'] != $cliente['txtVendedor']) {
@@ -108,7 +105,7 @@ if ($_GET['f'] == "c") {
 		exit();
 	}
 
-	// Verificar se existe alguma chave da array Medidas gravada como vazia e substitui-la por NULL
+	// Verificar se existe alguma chave da array Medidas gravada como vazia e substitui-la por 0
 	foreach ($medidas as $key => $value) {
 		if (empty($value) || $value === null) {
 			$medidas[$key] = "0";
@@ -121,11 +118,12 @@ if ($_GET['f'] == "c") {
 
 	//Tratar nome do cliente 
 	$comAcentos = array('à', 'á', 'â', 'ã', 'ä', 'å', 'ç', 'è', 'é', 'ê', 'ë', 'ì', 'í', 'î', 'ï', 'ñ', 'ò', 'ó', 'ô', 'õ', 'ö', 'ù', 'ü', 'ú', 'ÿ', 'À', 'Á', 'Â', 'Ã', 'Ä', 'Å', 'Ç', 'È', 'É', 'Ê', 'Ë', 'Ì', 'Í', 'Î', 'Ï', 'Ñ', 'Ò', 'Ó', 'Ô', 'Õ', 'Ö', 'O', 'Ù', 'Ü', 'Ú');
-
 	$semAcentos = array('a', 'a', 'a', 'a', 'a', 'a', 'c', 'e', 'e', 'e', 'e', 'i', 'i', 'i', 'i', 'n', 'o', 'o', 'o', 'o', 'o', 'u', 'u', 'u', 'y', 'A', 'A', 'A', 'A', 'A', 'A', 'C', 'E', 'E', 'E', 'E', 'I', 'I', 'I', 'I', 'N', 'O', 'O', 'O', 'O', 'O', '0', 'U', 'U', 'U');
 
 	$txtNomeCliente = str_replace($comAcentos, $semAcentos, $cliente['txtNomeCliente']);
-	$txtNomeCliente = strtoupper($txtNomeCliente);
+	if (!ctype_upper($txtNomeCliente)) {
+		$txtNomeCliente = strtoupper($txtNomeCliente);
+	}
 
 	//Verificar se já existe esse cliente
 	$sql = "SELECT * FROM CLIENTES WHERE CLIENTE='" . $txtNomeCliente . "' AND DATA_NASCIMENTO='" . $cliente['txtDataNascimento'] . "'";
@@ -160,6 +158,16 @@ if ($_GET['f'] == "c") {
 			exit();
 		} 
 		//Finaliza cadastro de cliente
+	} else {
+		//Se ele for cadastrado fazer update de alguns campos como TELEFONES, PROFISSÃO E CIDADE 
+		$sql = "UPDATE CLIENTES SET TELEFONE_1 = '" . $cliente['txtTelefone1'] . "', TELEFONE_2 = '" . $cliente['txtTelefone2'] . "', CIDADE = '" . $cliente['txtCidade'] . "', PROFISSAO = '" . $cliente['txtProfissao'] . "' WHERE CLIENTE='" . $txtNomeCliente . "' AND DATA_NASCIMENTO='" . $cliente['txtDataNascimento'] . "'";
+	
+		if (!mysqli_query($conn, $sql)) {
+			mysqli_close($conn);
+			print "<script>alert('Erro ao fazer update do cliente. Contate um administrador do sistema!'); history.go(-1)</script>";
+			exit();
+		}
+	
 	}
 
 	// Buscar ID do usuário cadastrado

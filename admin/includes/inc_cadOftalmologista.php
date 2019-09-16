@@ -1,7 +1,8 @@
 <link rel="stylesheet" href="../css/orcamentos.css?version=454" media="screen,projection">
+<link rel="stylesheet" href="css/techideia.css?version=54545" media="screen,projection">
 
 <!-- envia o formulario para a página funcoesCadastro.php-->
-<div class="container center">
+<div class="container center cadastro">
 	<form action="funcoesCadastro.php?f=c&form=oftalmologista" method="POST" accept-charset="utf-8">
 		<h4 class="titulo-form">Cadastro de Oftalmologista</h4>
 

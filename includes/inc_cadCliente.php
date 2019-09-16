@@ -42,7 +42,7 @@
 						<label class="descricao">Telefone 1<span class="obrigatorio">*</span></label>
 					</div>
 					<div class="col s7 m9">
-						<input class="caixa" type="text" name="txtTelefone1" required>
+						<input class="caixa" type="text" name="txtTelefone1" required id="telefone">
 					</div>
 				</div>
 
@@ -51,7 +51,7 @@
 						<label class="descricao">Telefone 2</label>
 					</div>
 					<div class="col s7 m9">
-						<input class="caixa" type="text" name="txtTelefone2">
+						<input class="caixa" type="text" name="txtTelefone2" id="telefone2">
 					</div>
 				</div>
 
@@ -85,3 +85,7 @@
 </div> 
 </form>
 </div>
+
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script type="text/javascript" src="../js/jquery.mask.min.js"></script>
+<script type="text/javascript" src="../js/orcamento.js"></script>

@@ -18,14 +18,24 @@ if ($_SESSION['admin'] == 0) {
 }
 
 include '../src/conn.php';
+
+//Adicionando informações do admin na página
 $sql = "SELECT * FROM USUARIOS WHERE ID = '" .$_SESSION['admin_id']. "'";
 $admin = mysqli_query($conn, $sql);
 $admin = mysqli_fetch_array($admin);
 
+//Query para coletar os orçamentos realizados no dia
 $sql = "SELECT ID FROM ORCAMENTOS WHERE DATA_CRIACAO = '$dia'";
 $rs = mysqli_query($conn, $sql);
 $orcamento = mysqli_num_rows($rs);
 
+//Query para coletar o total de clientes 
+$query = mysqli_query($conn, "SELECT * FROM CLIENTES");
+$totalClientes = mysqli_num_rows($query);
+
+//Query para coletar os orçamentos criados em 1 mês de 30 dias
+$query = mysqli_query($conn, "SELECT * FROM ORCAMENTOS WHERE DATA_CRIACAO BETWEEN CURRENT_DATE()-30 AND CURRENT_DATE()");
+$totalVendas = mysqli_num_rows($query);
 ?>
 
 <!DOCTYPE html>

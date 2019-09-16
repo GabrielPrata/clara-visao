@@ -29,7 +29,7 @@
 					<label class="descricao">Telefone</label>
 				</div>
 				<div class="col s9 m9">
-					<input type="text" name="txtTelefone" class="caixa">
+					<input type="text" name="txtTelefone" class="caixa" id="telefone">
 				</div>
 			</div>
 		</div>
@@ -40,3 +40,7 @@
 	</form>
 	<div class="espacamento"><br><br><br><br></div>
 </div>
+
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script type="text/javascript" src="../js/jquery.mask.min.js"></script>
+<script type="text/javascript" src="../js/orcamento.js"></script>

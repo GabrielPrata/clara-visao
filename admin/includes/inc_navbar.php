@@ -80,13 +80,13 @@ body {
               <div class="collapsible-body">
                 <ul>
                   <li>
-                    <a href="#">Orçamentos</a>
+                    <a href="relatorios.php?f=orc">Orçamentos</a>
                   </li>
                   <li>
-                    <a href="#">Funcionarios</a>
+                    <a href="relatorios.php?f=func">Funcionarios</a>
                   </li>
                   <li>
-                    <a href="#">Clientes</a>
+                    <a href="relatorios.php?f=clientes">Clientes</a>
                   </li>
                 </ul>
               </div>
@@ -100,13 +100,13 @@ body {
               <div class="collapsible-body">
                 <ul>
                   <li>
-                    <a href="#">Orçamentos</a>
+                    <a href="relatorios.php?f=orc">Orçamentos</a>
                   </li>
                   <li>
-                    <a href="#">Funcionarios</a>
+                    <a href="relatorios.php?f=func">Funcionarios</a>
                   </li>
                   <li>
-                    <a href="#">Clientes</a>
+                    <a href="relatorios.php?f=clientes">Clientes</a>
                   </li>
                 </ul>
               </div>
@@ -131,6 +131,9 @@ body {
                   </li>
                   <li>
                     <a href="cadastros.php?f=cliente">Cliente</a>
+                  </li>
+                  <li>
+                    <a href="cadastros.php?f=funcionario">Funcionario</a>
                   </li>
                 </ul>
               </div>
@@ -161,10 +164,10 @@ body {
               <div class="collapsible-body">
                 <ul>
                   <li>
-                    <a href="#">Exibir usuários</a>
+                    <a href="usuarios.php?f=show">Exibir usuários</a>
                   </li>
                   <li>
-                    <a href="#">Cadastrar um usuário</a>
+                    <a href="usuarios.php?f=cad">Cadastrar um usuário</a>
                   </li>
                 </ul>
               </div>
@@ -173,10 +176,6 @@ body {
         </li>
 
         <li class="li-hover"><div class="divider"></div></li>
-
-        <li class="bold">
-          <a href="#" class="waves-effect waves-cyan"><i class="mdi-action-settings"></i> Configurações</a>
-        </li>
 
         <li class="bold">
           <a href="../src/valida.php?f=leave" class="waves-effect waves-cyan"><i class="mdi-hardware-keyboard-tab"></i> Sair</a>

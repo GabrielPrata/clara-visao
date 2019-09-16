@@ -53,6 +53,7 @@ td {
 }
 
 .obsdioptrias {
+	margin-top: -15px !important;
 	margin-right: -150px !important;
 }
 
@@ -168,13 +169,11 @@ td {
 
 .bloco-left {
 	display: inline-block;
-	float: left;
 	min-width: 85% !important;
 }
 
 .bloco-right {
 	display: inline-block;
-	float: relative;
 	min-width: 15% !important;
 }
 
@@ -208,11 +207,31 @@ td {
 	margin-left: -30px;
 }
 
+.caixaPesquisa {
+	margin-top: 20px;
+}
+
+.rowBox {
+	margin-top: 40px;
+}
+
+@media screen and (min-width: 993px) {
+
+	.boxTextArea {
+		margin-left: -260px !important;
+	} 
+	
+	.boxLente {
+		margin-left: -195px !important;
+	}
+}
+
 /*Responsividade*/
 
 @media screen and (max-width: 992px) {
-	.caixa {
-		width: 50% !important;
+
+	.rowBox {
+		margin-top: 0px !important;
 	}
 
 	.vend-cod {
@@ -221,17 +240,64 @@ td {
 	}
 
 	.exp {
-		max-width: 80% !important;
+		max-width: 40% !important;
 	}
 
 	.bloco-left {
 		float: center !important;
 	}
 
+	.combo-vendedor {
+		margin-left: -20px !important;
+	}
+
+	#dioptrias {
+		max-width: 100% !important;
+		margin-left: 0% !important;
+	}
+
+	.boxOftalmo {
+		max-width: 65% !important;
+	}
+
+	.boxCombo {
+		width: 100% !important;
+		margin-left: -2.5px !important;
+	}
+
+	.boxTextArea {
+		margin-top: -10px !important;
+		width: 90% !important;
+		margin-left: -457px !important;
+	} 
+
+	.boxLente {
+		width: 81.5% !important;
+		margin-left: -457px !important;
+	}
+
+	.boxId {
+		margin-left: -7px !important;
+	}
+
+	.boxVendedor {
+		margin-left: 43px !important;
+		width: 100% !important;
+	}
+
+	.boxNome {
+		max-width: 70% !important;
+		margin-left: -22px !important;
+	}
+
 }
 
-/* On screens that are 600px or less, set the background color to olive */
 @media screen and (max-width: 600px) {
+
+	.rowBox {
+		margin-top: 0px !important;
+	}
+	
 	.caixa {
 		width: 70% !important;
 		/*margin-top: 10px !important;*/
@@ -258,4 +324,42 @@ td {
 		margin-top: 25px !important;
 	}
 
+	#dioptrias {
+		max-width: 100% !important;
+		margin-left: 0% !important;
+	}
+
+	.boxOftalmo {
+		max-width: 65% !important;
+	}
+
+	.boxCombo {
+		width: 79% !important;
+		margin-left: -2.5px !important;
+	}
+
+	.boxTextArea {
+		margin-top: -10px !important;
+		width: 77% !important;
+		margin-left: -14px !important;
+	} 
+
+	.boxLente {
+		width: 69% !important;
+		margin-left: -14px !important;
+	}
+
+	.boxId {
+		margin-left: -30px !important;
+	}
+
+	.boxVendedor {
+		margin-left: 15px !important;
+		width: 100% !important;
+	}
+
+	.boxNome {
+		max-width: 53% !important;
+		margin-left: -6px !important;
+	}
 }

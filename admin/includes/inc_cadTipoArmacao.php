@@ -1,7 +1,8 @@
 <link rel="stylesheet" href="../css/orcamentos.css?version=12" media="screen,projection">
+<link rel="stylesheet" href="css/techideia.css?version=54545" media="screen,projection">
 
 <!-- envia o formulario para a página funcoesCadastro.php-->
-<div class="container center">
+<div class="container center cadastro">
 	<form action="funcoesCadastro.php?f=c&form=tipArmacao" method="POST" accept-charset="utf-8">
 		<h4 class="titulo-form">Cadastro de Armação</h4>
 

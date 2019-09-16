@@ -63,16 +63,12 @@ $admin = mysqli_fetch_array($admin);
 
 	<?php include 'includes/inc_navbar.php'; 
 
-	if ($_GET['f'] == "lab") {
-		include 'includes/inc_cadLab.php'; 
-	} elseif ($_GET['f'] == "arm") {
-		include 'includes/inc_cadTipoArmacao.php'; 
-	} elseif ($_GET['f'] == "cliente") {
+	if ($_GET['f'] == "orc") {
+		include 'includes/inc_relOrcamento.php'; 
+	} elseif ($_GET['f'] == "func") {
+		include 'includes/inc_relFuncionarios.php'; 
+	} elseif ($_GET['f'] == "clientes") {
 		include 'includes/inc_cadCliente.php'; 
-	} elseif ($_GET['f'] == "oft") {
-		include 'includes/inc_cadOftalmologista.php'; 
-	} elseif ($_GET['f'] == "funcionario") {
-		include 'includes/inc_cadFuncionarios.php';
 	} else {
 		?>
 		<div class="container left error-c">

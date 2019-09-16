@@ -38,7 +38,7 @@ if ($cont == 0) {
 		<tr>
 		<th class='pesquisa-th borda'>Nome do Cliente</th>
 		<th class='pesquisa-th borda'>Data de Nascimento</th>
-		<th class='pesquisa-th'>Ações</th>
+		<th class='pesquisa-th acoesTable'>Ações</th>
 		</tr>
 		</thead>
 		<tbody>

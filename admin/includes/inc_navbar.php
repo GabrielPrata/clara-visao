@@ -147,7 +147,7 @@ body {
               <div class="collapsible-body">
                 <ul>
                   <li>
-                    <a href="#">Listar Orçamentos</a>
+                    <a href="relatorios.php?f=orc">Listar Orçamentos</a>
                   </li>
                   <li>
                     <a href="../src/painel.php">Cadastrar Orçamento</a>
@@ -164,7 +164,7 @@ body {
               <div class="collapsible-body">
                 <ul>
                   <li>
-                    <a href="usuarios.php?f=show">Exibir usuários</a>
+                    <a href="relatorios.php?f=users">Exibir usuários</a>
                   </li>
                   <li>
                     <a href="usuarios.php?f=cad">Cadastrar um usuário</a>

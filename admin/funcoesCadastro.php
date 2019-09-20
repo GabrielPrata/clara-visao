@@ -199,7 +199,7 @@ if ($_GET['f'] == "c") {
 		$sql = "INSERT INTO FUNCIONARIOS (CODIGO, NOME, TELEFONE, EMAIL, ENDERECO, BAIRRO) VALUES ('$txtCodigo', '$txtNome', '$txtTelefone', '$txtEmail', '$txtEndereco', '$txtBairro')";
 		if (mysqli_query($conn, $sql)) {
 			mysqli_close($conn);
-			print "<script>alert('Cadastro efetuado com sucesso!'); window.location.href='cadastros.php?f=cliente';</script>";
+			print "<script>alert('Cadastro efetuado com sucesso!'); window.location.href='cadastros.php?f=funcionario';</script>";
 			exit();
 		} else {
 			mysqli_close($conn);

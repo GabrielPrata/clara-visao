@@ -97,9 +97,11 @@
 										?> <option value="<?php print $vend['CODIGO'] ?>" selected=""><?php print $vend['NOME'] ?></option> <?php
 										while ($array = mysqli_fetch_array($query)) {
 											if ($array['ID'] != $orcamentos['VENDEDOR_ID']) {
-												?> 
-												<option value="<?php print $array['CODIGO']; ?>"><?php print $array['NOME']; ?></option> 
-												<?php
+												if ($array['STATUS_FUNC'] != 0) {
+													if ($array['STATUS_FUNC'] != 2) {
+														?> <option value="<?php print $array['CODIGO']; ?>"><?php print $array['NOME']; ?></option> <?php
+													}
+												}
 											}
 										}
 									}

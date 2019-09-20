@@ -50,8 +50,8 @@
                         echo "<td style='text-align: center !important;'>" . $dataCriacao[2] . "/" . $dataCriacao[1] . "/" . $dataCriacao[0] . "</td>";
                         echo "<td style='text-align: center !important;'> R$ " . $total . "</td>";
                         echo "<td style='text-align: center !important;'>
-                        <a href='painel.php?f=details&user=" . $id . "&orc=" . $tabelaDados['ID'] . "' class='voltar2'>Var Detalhes</a> 
-					    <a href='funcoesOrcamento.php?id=" . $tabelaDados['ID'] . "&f=del' class='apagar'>Apagar</a></td>";
+                        <a href='../src/painel.php?f=details&user=" . $tabelaDados['CLIENTE'] . "&orc=" . $tabelaDados['ID'] . "' class='voltar2'>Var Detalhes</a> 
+					    <a href='apagar.php?f=del&form=orc&id=" . $tabelaDados['ID'] . "' class='apagar'>Apagar</a></td>";
 					    echo "</tr>";
 				    }
                     ?>

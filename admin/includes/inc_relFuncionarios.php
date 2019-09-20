@@ -25,31 +25,42 @@
                 <thead>
                     <tr>
                         <th style="text-align: center !important;">Nome</th>
-                        <th style="max-width: 40px; text-align: center !important;">Código</th>
-                        <th style="max-width: 40px; text-align: center !important;">Vendas Diarias</th>
-                        <th style="max-width: 40px; text-align: center !important;">Vendas Mensais</th>
+                        <th style="max-width: 60px; text-align: center !important;">Código</th>
+                        <th style="max-width: 60px; text-align: center !important;">Vendas Diarias</th>
+                        <th style="max-width: 60px; text-align: center !important;">Vendas Mensais</th>
+                        <th style="max-width: 60px; text-align: center !important;">Status</th>
                         <th style="text-align: center !important;">Ações</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php 
                     while ($tabelaDados = mysqli_fetch_array($query)) {
-                        echo "<tr>";
+                        if ($tabelaDados['STATUS_FUNC'] != 0) {
+                            $status = "<span> Normal </span>";
+                            if ($tabelaDados['STATUS_FUNC'] == 2) {
+                                $status = "<span> Férias </span>";
+                            }
+                            
+                            echo "<tr>";
+                            $day = date('Y-m-d');
                         
-                        $vendasDiarias = mysqli_query($conn, "SELECT * FROM ORCAMENTOS WHERE (VENDEDOR_ID = '" . $tabelaDados['ID'] . "') AND (DATA_CRIACAO BETWEEN CURRENT_DATE()-1 AND CURRENT_DATE())");
-                        $vendasDiarias = mysqli_num_rows($vendasDiarias);
+                            $vendasDiarias = mysqli_query($conn, "SELECT * FROM ORCAMENTOS WHERE (VENDEDOR_ID = '" . $tabelaDados['ID'] . "') AND (DATA_CRIACAO = '" . $day . "')");
+                            $vendasDiarias = mysqli_num_rows($vendasDiarias);
 
-                        $vendasMensais = mysqli_query($conn, "SELECT * FROM ORCAMENTOS WHERE (VENDEDOR_ID = '" . $tabelaDados['ID'] . "') AND (DATA_CRIACAO BETWEEN CURRENT_DATE()-30 AND CURRENT_DATE())");
-                        $vMensais = mysqli_num_rows($vendasMensais);
+                            $vendasMensais = mysqli_query($conn, "SELECT * FROM ORCAMENTOS WHERE (VENDEDOR_ID = '" . $tabelaDados['ID'] . "') AND (DATA_CRIACAO BETWEEN CURRENT_DATE()-30 AND CURRENT_DATE())");
+                            $vMensais = mysqli_num_rows($vendasMensais);
 
-					    echo "<td style='text-align: center !important;'>" . $tabelaDados['NOME'] . "</td>";
-                        echo "<td style='text-align: center !important;'>" . $tabelaDados['CODIGO'] . "</td>";
-                        echo "<td style='text-align: center !important;'>" . $vendasDiarias . "</td>";
-                        echo "<td style='text-align: center !important;'>" . $vMensais . "</td>";
-                        echo "<td style='text-align: center !important;'>
-                        <a href='painel.php?f=details&user=" . $id . "&orc=" . $tabelaDados['ID'] . "' class='voltar2'>Var Detalhes</a> 
-					    <a href='funcoesOrcamento.php?id=" . $tabelaDados['ID'] . "&f=del' class='apagar'>Apagar</a></td>";
-					    echo "</tr>";
+				    	    echo "<td style='text-align: center !important;'>" . $tabelaDados['NOME'] . "</td>";
+                            echo "<td style='text-align: center !important;'>" . $tabelaDados['CODIGO'] . "</td>";
+                            echo "<td style='text-align: center !important;'>" . $vendasDiarias . "</td>";
+                            echo "<td style='text-align: center !important;'>" . $vMensais . "</td>";
+                            echo "<td style='text-align: center !important;'>" . $status . "</td>";
+                            echo "<td style='text-align: center !important;'>
+                            <a href='sobre.php?f=details&user=" . $tabelaDados['ID'] . "' class='voltar2'>Ver Detalhes</a> 
+				    	    <a href='apagar.php?f=del&form=func&id=" . $tabelaDados['ID'] . "' class='apagar'>Apagar</a></td>";
+                            echo "</tr>";
+
+                        } 
 				    }
                     ?>
                 </tbody>

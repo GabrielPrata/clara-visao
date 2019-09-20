@@ -89,7 +89,11 @@
 											?> <option value="" disabled="" selected="">Cadastre um Funcionario</option> <?php
 										} else {
 											while ($array = mysqli_fetch_array($query)) {
-												?> <option value="<?php print $array['CODIGO']; ?>"><?php print $array['NOME']; ?></option> <?php
+												if ($array['STATUS_FUNC'] != 0) {
+													if ($array['STATUS_FUNC'] != 2) {
+														?> <option value="<?php print $array['CODIGO']; ?>"><?php print $array['NOME']; ?></option> <?php
+													}
+												}
 											}
 										}
 										?>

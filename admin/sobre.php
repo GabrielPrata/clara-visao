@@ -62,14 +62,9 @@ $admin = mysqli_fetch_array($admin);
 
 	<?php include 'includes/inc_navbar.php'; 
 
-	if ($_GET['f'] == "orc") {
-		include 'includes/inc_relOrcamento.php'; 
-	} elseif ($_GET['f'] == "func") {
-		include 'includes/inc_relFuncionarios.php'; 
-	} elseif ($_GET['f'] == "clientes") {
-		include 'includes/inc_relClientes.php'; 
-	} elseif ($_GET['f'] == "users") {
-		include 'includes/inc_relUsuarios.php'; 
+	if ($_GET['f'] == "details") {
+        $id = mysqli_real_escape_string($conn, $_GET['user']);
+		include 'includes/inc_detFuncionarios.php'; 
 	} else {
 		?>
 		<div class="container left error-c">

@@ -65,6 +65,9 @@ $admin = mysqli_fetch_array($admin);
 	if ($_GET['f'] == "details") {
         $id = mysqli_real_escape_string($conn, $_GET['user']);
 		include 'includes/inc_detFuncionarios.php'; 
+	} elseif ($_GET['f'] == "usuarios") {
+		$id = mysqli_real_escape_string($conn, $_GET['user']);
+		include 'includes/inc_detUsuarios.php'; 
 	} else {
 		?>
 		<div class="container left error-c">

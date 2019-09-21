@@ -34,7 +34,10 @@
                         print "<td style='text-align: center !important;'>" . $values['CLIENTE'] . "</td>";
                         print "<td style='text-align: center !important;'>" . $day . "</td>";
                         print "<td style='text-align: center !important;'>" . $tOrcamento . "</td>";
-                        print "<td style='text-align: center !important;'> Ver Orçamentos Excluir</td>";
+                        print "<td style='text-align: center !important;'> 
+                        <a href='../src/orcamentos.php?id=" . $values['ID'] . "'>Ver Orçamentos</a>
+                        <a onclick='confirmar(" . $values['ID'] . ")' style='cursor: pointer;'>Apagar</a>
+                        </td>";
                         print "</tr>";
                     }
 
@@ -55,3 +58,16 @@
         
 	<div class="espacamento"><br><br><br><br></div>
 </div>
+
+<script src="../js/materialize.min.js"></script>
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script type="text/javascript">
+
+function confirmar(id) {
+    if (confirm("Tem certeza que deseja excluir esse cliente? \n\nATENÇÃO: Essa ação não poderá ser desfeita no futuro!")) {
+        var endereco = "apagar.php?f=del&form=cli&id=";
+        location.href=endereco+id;
+   }
+}
+
+</script>

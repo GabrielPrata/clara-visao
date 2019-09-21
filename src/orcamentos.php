@@ -99,7 +99,7 @@ $dados = mysqli_fetch_array($busca);
 			</tbody>
 		</table>
 		<div class="margem">
-			<a href='pesquisar.php' class='voltar2'>Voltar</a>
+			<a onclick="voltar()" class='voltar2' style="cursor: pointer;">Voltar</a>
 			<a href='observacoes.php?id=<?php print $id; ?>' class='obs'>Observações</a>
 		</div>
 		<?php } ?>
@@ -111,5 +111,10 @@ $dados = mysqli_fetch_array($busca);
 	<script src="../js/navbar.js"></script>
 	<script type="text/javascript" src="../js/jquery.min.js"></script>
 	<script type="text/javascript" src="../js/lsmain.js"></script>
+	<script type="text/javascript">
+		function voltar() {
+			window.history.go(-1);
+		}
+	</script>
 </body>
 </html>

@@ -25,7 +25,7 @@
                 <tbody>
                 <?php
                     while ($values = mysqli_fetch_assoc($query)) {
-                        $excluir = "<a href='#'> Excluir </a>";
+                        $excluir = "<a onclick='confirmar(" . $values['ID'] . ")' style='cursor: pointer;'> Excluir </a>";
                         if ($values['ID'] == $_SESSION['admin_id']) {
                             $excluir = "";
                         }
@@ -40,7 +40,7 @@
                         print "<td style='text-align: center !important;'>" . $values['EMAIL'] . "</td>";
                         print "<td style='text-align: center !important;'>" . $values['TELEFONE'] . "</td>";
                         print "<td style='text-align: center !important;'>" . $adm . "</td>";
-                        print "<td style='text-align: center !important;'> Editar " . $excluir . "</td>";
+                        print "<td style='text-align: center !important;'><a href='sobre.php?f=usuarios&user=" . $values['ID'] . "'> Editar </a>" . $excluir . "</td>";
                         print "</tr>";
                     }
 
@@ -59,5 +59,18 @@
             mysqli_close($conn);
             ?>
         
-	<div class="espacamento"><br><br><br><br></div>
+    <div class="espacamento"><br><br><br><br></div>
 </div>
+
+<script src="../js/materialize.min.js"></script>
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script type="text/javascript">
+
+function confirmar(id) {
+    if (confirm("Tem certeza que deseja excluir esse usuário? \n\nATENÇÃO: Essa ação não poderá ser desfeita no futuro!")) {
+        var endereco = "apagar.php?f=del&form=user&id=";
+        location.href=endereco+id;
+   }
+}
+
+</script>

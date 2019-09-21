@@ -7,7 +7,7 @@
 
 <!-- envia o formulario para a página funcoesCadastro.php-->
 <div class="container center cadastro">
-	<form action="apagar.php?f=update&form=func&id=<?php print $values['id']; ?>" method="POST" accept-charset="utf-8">
+	<form action="apagar.php?f=update&form=func&id=<?php print $id; ?>" method="POST" accept-charset="utf-8">
 		<h4 class="titulo-form alinhar">Detalhes do Funcionario</h4>
 
         <div class="espacamento"><br><br></div>
